@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lluvia de Tendencias</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="fondo-gris-claro fuente-sans">
+
+<!-- Encabezado -->
+<header class="fondo-azul-claro sombra-lg">
+    <div class="contenedor mx-auto flex items-centro justify-between py-6 px-8 flex-col md:flex-row">
+      <!-- Logo -->
+      <img src="./assets/images/Pagina_1/logo.jpg" alt="Imagen logo" class="w-48 h-48 mb-4 md:mb-0">
+  
+      <!-- Barra de búsqueda y botón -->
+      <div class="flex items-centro espacio-4">
+        <div class="flex items-center space-x-4">
+            <!-- Input más pequeño con borde gris -->
+            <label for="buscarInput" class="sr-only">Buscar producto</label>
+            <input 
+              type="text" 
+              id="buscarInput" 
+              placeholder="Buscar producto..." 
+              class="w-48 px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            
+            <!-- Botón Buscar en gris -->
+            <button 
+              id="buscarBtn" 
+              class="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors">
+              Buscar
+            </button>
+          </div>
+          
+          
+      </div>
+    </div>
+  </header>
+  
+  
+    <!-- Principal -->
+    <main class="contenedor mx-auto py-12 px-8">
+      <h2 class="texto-xl fuente-negrita texto-gris-oscuro mb-6">Nuestros Productos</h2>
+      <div id="contenedorProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+        <!-- Tarjetas de productos -->
+        <!-- Se generan dinámicamente -->
+      </div>
+    </main>
+  
+    <!-- Sección de ofertas especiales -->
+    <section class="bg-amarillo-claro py-16">
+      <div class="contenedor mx-auto texto-centro">
+        <h3 class="texto-3xl fuente-negrita texto-azul-claro mb-4">¡Ofertas Especiales!</h3>
+        <p class="texto-gris-medio mb-6">Aprovecha nuestras ofertas limitadas y compra tus productos favoritos a precios increíbles.</p>
+        <button class="px-8 py-4 fondo-rojo texto-blanco redondeado-lg hover:fondo-rojo-oscuro transition-colors">Ver Ofertas</button>
+      </div>
+    </section>
+  
+    <!-- Testimonios -->
+    <section class="contenedor mx-auto py-16 px-8">
+      <h3 class="texto-2xl fuente-negrita texto-gris-oscuro mb-6">Lo que dicen nuestros clientes</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="testimonio p-6 fondo-blanco sombra-md redondeado-lg">
+          <p class="texto-gris-oscuro mb-4">"¡Me encanta la calidad de los productos! Compré una camiseta y quedó perfecta." - Ana</p>
+          <div class="flex items-centro">
+            <img src="https://placeimg.com/50/50/people" alt="Avatar" class="redondeado-full mr-4">
+            <span class="fuente-negrita texto-gris-oscuro">Ana Pérez</span>
+          </div>
+        </div>
+        <div class="testimonio p-6 fondo-blanco sombra-md redondeado-lg">
+          <p class="texto-gris-oscuro mb-4">"Excelente tienda, siempre encuentro lo que necesito y los envíos son rápidos." - Juan</p>
+          <div class="flex items-centro">
+            <img src="https://placeimg.com/50/50/people" alt="Avatar" class="redondeado-full mr-4">
+            <span class="fuente-negrita texto-gris-oscuro">Juan García</span>
+          </div>
+        </div>
+        <div class="testimonio p-6 fondo-blanco sombra-md redondeado-lg">
+          <p class="texto-gris-oscuro mb-4">"Me sorprendió la rapidez y el estado de los productos. ¡Recomiendo totalmente!" - Marta</p>
+          <div class="flex items-centro">
+            <img src="https://placeimg.com/50/50/people" alt="Avatar" class="redondeado-full mr-4">
+            <span class="fuente-negrita texto-gris-oscuro">Marta López</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- Pie de página -->
+    <footer class="fondo-gris-oscuro texto-gris-claro py-4">
+      <div class="contenedor mx-auto texto-centro">
+        <p>&copy; 2024 Tienda de Ropa. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+  
+    
+    <script src="./js/script.js"></script>
+</body>
+</html>
+
