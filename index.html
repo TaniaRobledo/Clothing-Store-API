@@ -7,133 +7,177 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="fondo-gris-claro fuente-sans">
+<body class="bg-gray-200">
 
 <!-- Encabezado -->
-<header class="fondo-azul-claro sombra-lg">
-    <div class="contenedor mx-auto flex items-centro justify-between py-6 px-8 flex-col md:flex-row">
-      <!-- Logo -->
-      <img src="./assets/images/Pagina_1/logo.jpg" alt="Imagen logo" class="w-48 h-48 mb-4 md:mb-0">
-  
-      <!-- Barra de búsqueda y botón -->
-      <div class="flex items-centro espacio-4">
-        <div class="flex items-center space-x-4">
+<header class="bg-light-blue shadow-lg">
+    <div class="container mx-auto py-6 px-8 flex items-center justify-between flex-col md:flex-row">
+        <!-- Logo -->
+        <img src="./assets/images/Pagina_1/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
+      
+        <!-- Barra de navegación centrada -->
+        <nav class="bg-gray-800 p-4 rounded-lg md:flex-1">
+            <ul class="flex space-x-8 justify-center">
+                <li><a href="#" class="text-white hover:text-gray-400">Catálogo de ropa</a></li>
+                <li><a href="#" class="text-white hover:text-gray-400">Abrigo</a></li>
+                <li><a href="#" class="text-white hover:text-gray-400">Calzado</a></li>
+            </ul>
+        </nav>
+      
+        <!-- Barra de búsqueda y botón -->
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
             <!-- Input más pequeño con borde gris -->
             <label for="buscarInput" class="sr-only">Buscar producto</label>
             <input 
-              type="text" 
-              id="buscarInput" 
-              placeholder="Buscar producto..." 
-              class="w-48 px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                type="text" 
+                id="buscarInput" 
+                placeholder="Buscar producto..." 
+                class="w-48 px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
             
-            <!-- Botón Buscar en gris -->
+            <!-- Botón Buscar -->
             <button 
-              id="buscarBtn" 
-              class="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors">
-              Buscar
+                id="buscarBtn" 
+                class="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                Buscar
             </button>
-          </div>
+        </div>
+    </div>
+</header>
+
+<!-- Principal -->
+<main class="container mx-auto py-12 px-8">
+    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Nuestros Productos</h2>
+    <div id="contenedorProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+        <!-- Tarjetas de productos -->
+      
+    </div>
+</main>
+
+<!-- Sección de ofertas especiales -->
+<section class="bg-yellow-100 py-16">
+    <div class="container mx-auto text-center px-4">
+        <h3 class="text-3xl font-bold text-blue-600 mb-4">¡Ofertas Especiales!</h3>
+        <p class="text-gray-600 mb-6">Aprovecha nuestras ofertas limitadas y compra tus productos favoritos a precios increíbles.</p>
+        <button class="px-8 py-4 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors">
+            Ver Ofertas
+        </button>
+    </div>
+</section>
+
+<!-- Sección de ropa según el clima -->
+<section class="py-16 bg-gray-100">
+  <div class="container mx-auto px-8 text-center">
+    <h3 class="text-4xl font-bold text-gray-800 mb-8">Ropa según el clima de tu ciudad</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Tarjeta de clima -->
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Madrid</h4>
+        <p class="text-gray-600">Temperatura: 15°C</p>
+        <p class="text-gray-600 capitalize">Clima: Despejado</p>
+        <p class="text-gray-800 font-bold mt-4">Recomendación: Chaquetas ligeras y ropa de entretiempo.</p>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Barcelona</h4>
+        <p class="text-gray-600">Temperatura: 22°C</p>
+        <p class="text-gray-600 capitalize">Clima: Soleado</p>
+        <p class="text-gray-800 font-bold mt-4">Recomendación: Ropa ligera como camisetas y pantalones cortos.</p>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Sevilla</h4>
+        <p class="text-gray-600">Temperatura: 30°C</p>
+        <p class="text-gray-600 capitalize">Clima: Caluroso</p>
+        <p class="text-gray-800 font-bold mt-4">Recomendación: Ropa fresca como vestidos y sandalias.</p>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Bilbao</h4>
+        <p class="text-gray-600">Temperatura: 10°C</p>
+        <p class="text-gray-600 capitalize">Clima: Lluvioso</p>
+        <p class="text-gray-800 font-bold mt-4">Recomendación: Abrigos impermeables y botas.</p>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Valencia</h4>
+        <p class="text-gray-600">Temperatura: 18°C</p>
+        <p class="text-gray-600 capitalize">Clima: Parcialmente nublado</p>
+        <p class="text-gray-800 font-bold mt-4">Recomendación: Chaquetas ligeras y ropa de entretiempo.</p>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg p-6">
+        <h4 class="text-xl font-semibold text-gray-800 mb-2">Toledo</h4>
+        <p class="text-gray-600">Temperatura: 20°C</p>
+        <p class="text-gray-600 capitalize">Clima: Parcialmente nublado</p>
+        <p class="text-gray-800 font-bold mt-4">Recomendación: Chaquetas ligeras y ropa de entretiempo.</p>
       </div>
     </div>
-  </header>
-  
-  
-    <!-- Principal -->
-    <main class="contenedor mx-auto py-12 px-8">
+  </div>
+</section>
 
-        <nav class="bg-gray-800 p-4">
-            <ul class="flex space-x-8 justify-center">
-              <li>
-                <a href="#" class="text-white hover:text-gray-400">Catálogo de ropa</a>
-              </li>
-              <li>
-                <a href="#" class="text-white hover:text-gray-400">Abrigo</a>
-              </li>
-              <li>
-                <a href="#" class="text-white hover:text-gray-400">Calzado</a>
-              </li>
-            </ul>
-          </nav>
-      <h2 class="texto-xl fuente-negrita texto-gris-oscuro mb-6">Nuestros Productos</h2>
-      <div id="contenedorProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-        <!-- Tarjetas de productos -->
-        <!-- Se generan dinámicamente -->
-      </div>
-    </main>
-  
-    <!-- Sección de ofertas especiales -->
-    <section class="bg-amarillo-claro py-16">
-      <div class="contenedor mx-auto texto-centro">
-        <h3 class="texto-3xl fuente-negrita texto-azul-claro mb-4">¡Ofertas Especiales!</h3>
-        <p class="texto-gris-medio mb-6">Aprovecha nuestras ofertas limitadas y compra tus productos favoritos a precios increíbles.</p>
-        <button class="px-8 py-4 fondo-rojo texto-blanco redondeado-lg hover:fondo-rojo-oscuro transition-colors">Ver Ofertas</button>
-      </div>
-    </section>
-  
-    <!-- Testimonios -->
-    <section class="contenedor mx-auto py-16 px-8">
-      <h3 class="texto-2xl fuente-negrita texto-gris-oscuro mb-6">Lo que dicen nuestros clientes</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="testimonio p-6 fondo-blanco sombra-md redondeado-lg">
-          <p class="texto-gris-oscuro mb-4">"¡Me encanta la calidad de los productos! Compré una camiseta y quedó perfecta." - Ana</p>
-          <div class="flex items-centro">
-            <img src="https://placeimg.com/50/50/people" alt="Avatar" class="redondeado-full mr-4">
-            <span class="fuente-negrita texto-gris-oscuro">Ana Pérez</span>
-          </div>
+
+<!-- Testimonios -->
+<section class="container mx-auto py-16 px-8">
+    <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">Lo que dicen nuestros clientes</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+            <p class="text-gray-800 mb-4">"¡Me encanta la calidad de los productos! Compré una camiseta y quedó perfecta." - Ana</p>
+            <div class="flex items-center">
+                <img src="" alt="Avatar" class="rounded-full mr-4">
+                <span class="font-semibold text-gray-800">Ana Pérez</span>
+            </div>
         </div>
-        <div class="testimonio p-6 fondo-blanco sombra-md redondeado-lg">
-          <p class="texto-gris-oscuro mb-4">"Excelente tienda, siempre encuentro lo que necesito y los envíos son rápidos." - Juan</p>
-          <div class="flex items-centro">
-            <img src="https://placeimg.com/50/50/people" alt="Avatar" class="redondeado-full mr-4">
-            <span class="fuente-negrita texto-gris-oscuro">Juan García</span>
-          </div>
+        <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+            <p class="text-gray-800 mb-4">"Excelente tienda, siempre encuentro lo que necesito y los envíos son rápidos." - Juan</p>
+            <div class="flex items-center">
+                <img src="" alt="Avatar" class="rounded-full mr-4">
+                <span class="font-semibold text-gray-800">Juan García</span>
+            </div>
         </div>
-        <div class="testimonio p-6 fondo-blanco sombra-md redondeado-lg">
-          <p class="texto-gris-oscuro mb-4">"Me sorprendió la rapidez y el estado de los productos. ¡Recomiendo totalmente!" - Marta</p>
-          <div class="flex items-centro">
-            <img src="https://placeimg.com/50/50/people" alt="Avatar" class="redondeado-full mr-4">
-            <span class="fuente-negrita texto-gris-oscuro">Marta López</span>
-          </div>
+        <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+            <p class="text-gray-800 mb-4">"Me sorprendió la rapidez y el estado de los productos. ¡Recomiendo totalmente!" - Marta</p>
+            <div class="flex items-center">
+                <img src="" alt="Avatar" class="rounded-full mr-4">
+                <span class="font-semibold text-gray-800">Marta López</span>
+            </div>
         </div>
-      </div>
-    </section>
-  
- <!-- Pie de página -->
+    </div>
+</section>
+
+<!-- Pie de página -->
 <footer class="bg-gray-800 text-gray-300 py-8">
     <div class="container mx-auto px-4 text-center md:text-left">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <!-- Columna de información -->
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Sobre Nosotros</h3>
-          <p>Somos una tienda de ropa con la mejor calidad y precios del mercado. Ofrecemos una amplia variedad de estilos y productos para todos los gustos.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Columna de información -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Sobre Nosotros</h3>
+                <p>Somos una tienda de ropa con la mejor calidad y precios del mercado. Ofrecemos una amplia variedad de estilos y productos para todos los gustos.</p>
+            </div>
+            <!-- Columna de enlaces -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Catálogo</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Contacto</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <!-- Columna de contacto -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Contacto</h3>
+                <p>Dirección: Calle Ramirez 123, Talavera de la Reina</p>
+                <p>Teléfono: +123 456 789</p>
+                <p>Email: contacto@exclusiva.com</p>
+            </div>
         </div>
-        <!-- Columna de enlaces -->
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
-          <ul>
-            <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Catálogo</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Contacto</a></li>
-            <li><a href="#" class="text-gray-400 hover:text-white">Términos y Condiciones</a></li>
-          </ul>
+        <div class="mt-8 border-t border-gray-700 pt-4">
+            <p>&copy; 2024 Exclusiva. Todos los derechos reservados.</p>
         </div>
-        <!-- Columna de contacto -->
-        <div>
-          <h3 class="text-xl font-semibold mb-4">Contacto</h3>
-          <p>Dirección: Calle Ramirez 123, Talavera de la Reina</p>
-          <p>Teléfono: +123 456 789</p>
-          <p>Email: contacto@exclusiva.com</p>
-        </div>
-      </div>
-      <div class="mt-8 border-t border-gray-700 pt-4">
-        <p>&copy; 2024 Exclusiva. Todos los derechos reservados.</p>
-      </div>
     </div>
-  </footer>
-  
-  
-    
-    <script src="./js/script.js"></script>
+</footer>
+
+<script src="./js/script.js"></script>
 </body>
 </html>
 
