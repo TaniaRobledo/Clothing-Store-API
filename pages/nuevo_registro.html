@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lluvia de Tendencias</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex justify-center items-center h-screen flex-col" style="background-image: url(../assets/images/Registro/fondo.jpg); background-repeat: no-repeat; background-size: contain; width: 2100px;"> 
+
+    <!-- Título fuera del formulario y centrado arriba -->
+    <h1 class="text-center text-3xl font-bold text-gray-700 mb-8">Elige qué ponerte cada día y ir adecuado en cada ocasión</h1>
+
+    <body class="bg-gray-100 flex justify-center items-center h-screen flex-col">
+
+        <div class="bg-white p-8 rounded shadow-lg mt-10"  style="width: 500px;">
+            <h2 class="text-center text-2xl font-bold text-gray-700 mb-4">Crear cuenta</h2>
+    
+          <!-- Formulario de registro -->
+    <form action="../index.html" method="get">
+        <div class="mb-4">
+            <label for="first-name" class="block text-gray-600 font-semibold mb-2">Nombre</label>
+            <input type="text" id="first-name" placeholder="Introduce tu nombre"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:bg-gray-200 placeholder-gray-400 bg-gray-100"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="last-name" class="block text-gray-600 font-semibold mb-2">Apellidos</label>
+            <input type="text" id="last-name" placeholder="Introduce tus apellidos"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:bg-gray-200 placeholder-gray-400 bg-gray-100"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="email" class="block text-gray-600 font-semibold mb-2">Correo electrónico</label>
+            <input type="email" id="email" placeholder="Introduce tu correo electrónico"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:bg-gray-200 placeholder-gray-400 bg-gray-100"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="password" class="block text-gray-600 font-semibold mb-2">Contraseña</label>
+            <input type="password" id="password" placeholder="Introduce tu contraseña"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:bg-gray-200 placeholder-gray-400 bg-gray-100"
+                required>
+        </div>
+
+        <div class="mb-4">
+            <label for="birthdate" class="block text-gray-600 font-semibold mb-2">Fecha de nacimiento</label>
+            <input type="date" id="birthdate" class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 focus:bg-gray-200 placeholder-gray-400 bg-gray-100"
+                required>
+        </div>
+
+        <button type="submit" class="w-full bg-gray-600 text-white px-4 py-2 rounded hover:bg-gray-700 transition duration-200">Registrarse</button>
+    </form>
+    
+            <p class="text-center text-gray-600 mt-4">Crear Cuenta <a href="../index.html" ></a></p>
+        </div>
+
+</body>
+</html>
