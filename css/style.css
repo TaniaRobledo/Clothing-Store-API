@@ -44,3 +44,8 @@ body {
     align-items: flex-start;
 }
 
+
+.body_registro{
+    background-image: url('/assets/images/Registro/fondo.jpg');
+}
+

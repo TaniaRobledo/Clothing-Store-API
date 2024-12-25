@@ -1,9 +1,18 @@
+//AUTORIZACIONES
+//Client ID 61fb6b1f7f17a55
+//Client Secret 9721a822f82c20a394dba8ef54a94324fa08ce51
+
+
+
+//CLAVE API TIEMPO
+//zliMgA01MzSLcEfnfHEigUiRm4QvtXA3
+
 //Elementos
 const contenedorProductos = document.getElementById("contenedorProductos");
 
 
 //URL de los productos
-const url = "https://api.escuelajs.co/api/v1/products";
+const url = "https://fakestoreapi.com/products";
 
 //Funcion para hacer la petición asíncrona
 const peticion = async (url) => {
@@ -21,6 +30,7 @@ fetch(url)
     //Recorremos cada producto del array de productos
     productos.forEach(producto => {
       console.log(`ID: ${producto.id}`);
+      console.log(`Image: ${producto.image}`);
       console.log(`Nombre: ${producto.title}`);
       console.log(`Precio: ${producto.price}`);
       console.log(`Descripcion: ${producto.description}`);
@@ -33,7 +43,7 @@ const crearElementos = (productos) => {
   const fragment = document.createDocumentFragment();
 
   productos.forEach(producto => {
-    // Crear tarjeta de producto
+    // Crear cada tarjeta de producto
     const contenedorProducto = document.createElement("div");
     contenedorProducto.classList.add("border", "p-4", "rounded", "shadow");
 
@@ -41,17 +51,23 @@ const crearElementos = (productos) => {
     tituloProducto.classList.add("text-lg", "font-semibold", "mb-2");
     tituloProducto.textContent = producto.title;
 
+    const imagenProducto = document.createElement("img");
+    imagenProducto.classList.add("mb-2");
+    imagenProducto.src = producto.image; 
+    
+
     const precioProducto = document.createElement("p");
     precioProducto.classList.add("text-gray-700", "mb-2");
-    precioProducto.textContent = `Precio: $${producto.price}`;
+    precioProducto.textContent = `Precio: ${producto.price}€`;
 
     const descripcionProducto = document.createElement("p");
-    descripcionProducto.classList.add("text-gray-600", "text-sm");
+    descripcionProducto.classList.add("text-gray-600", "text-sm", "text-justify");
     descripcionProducto.textContent = producto.description;
 
     // Agregar elementos a la tarjeta
     contenedorProducto.appendChild(tituloProducto);
     contenedorProducto.appendChild(precioProducto);
+    contenedorProducto.appendChild(imagenProducto);
     contenedorProducto.appendChild(descripcionProducto);
 
     // Agregar la tarjeta al fragmento
