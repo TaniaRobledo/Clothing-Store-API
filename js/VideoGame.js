@@ -24,7 +24,10 @@ class VideoGame {
     const imagenProducto = document.createElement("img");
     imagenProducto.classList.add("mb-2");
     imagenProducto.src = this.thumbnail; 
-    
+
+    const plataformaVideojuego = document.createElement("p")
+    plataformaVideojuego.classList.add("text-lg", "font-semibold", "mb-2");
+    plataformaVideojuego.textContent = this.platform;
 
     // const precioProducto = document.createElement("p");
     // precioProducto.classList.add("text-gray-700", "mb-2");
@@ -38,6 +41,7 @@ class VideoGame {
     contenedorProducto.appendChild(tituloProducto);
     // contenedorProducto.appendChild(precioProducto);
     contenedorProducto.appendChild(imagenProducto);
+    contenedorProducto.appendChild(plataformaVideojuego);
     contenedorProducto.appendChild(descripcionProducto);
 
     return contenedorProducto
