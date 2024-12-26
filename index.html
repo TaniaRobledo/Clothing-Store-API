@@ -13,14 +13,15 @@
 <header class="bg-light-blue shadow-lg">
     <div class="container mx-auto py-6 px-8 flex items-center justify-between flex-col md:flex-row">
         <!-- Logo -->
-        <img src="./assets/images/Pagina_1/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
+        <img src="./assets/images/Pagina_1/logo.png" alt="Imagen logo" class="w-40 h-40 mb-4 md:mb-0">
       
         <!-- Barra de navegación centrada -->
-        <nav class="bg-gray-800 p-4 rounded-lg md:flex-1">
+        <nav class="bg-gray-300 p-4 rounded-lg md:flex-1">
             <ul class="flex space-x-8 justify-center">
-                <li><a href="#" class="text-white hover:text-gray-400">Catálogo de ropa</a></li>
-                <li><a href="#" class="text-white hover:text-gray-400">Abrigo</a></li>
-                <li><a href="#" class="text-white hover:text-gray-400">Calzado</a></li>
+                <li><a href="#productos" class="text-gray-600 hover:text-gray-400">Nuestros productos</a></li>
+                <li><a href="#ofertas" class="text-gray-600 hover:text-gray-400">Ofertas especiales</a></li>
+                <li><a href="#clima" class="text-gray-600 hover:text-gray-400">Ropa según el clima</a></li>
+                <li><a href="#opiniones" class="text-gray-600 hover:text-gray-400">Opiniones de nuestros cliente</a></li>
             </ul>
         </nav>
       
@@ -44,8 +45,8 @@
     </div>
 </header>
 
-<!-- Principal -->
-<main class="container mx-auto py-12 px-8">
+<!-- Contenedor para las tarjetas de los productos -->
+<main class="container mx-auto py-12 px-8" id="productos">
     <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Nuestros Productos</h2>
     <div id="contenedorProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         <!-- Tarjetas de productos -->
@@ -54,7 +55,7 @@
 </main>
 
 <!-- Sección de ofertas especiales -->
-<section class="bg-yellow-100 py-16">
+<section class="bg-yellow-100 py-16" id="ofertas">
     <div class="container mx-auto text-center px-4">
         <h3 class="text-3xl font-bold text-blue-600 mb-4">¡Ofertas Especiales!</h3>
         <p class="text-gray-600 mb-6">Aprovecha nuestras ofertas limitadas y compra tus productos favoritos a precios increíbles.</p>
@@ -65,7 +66,7 @@
 </section>
 
 <!-- Sección de ropa según el clima -->
-<section class="py-16 bg-gray-100">
+<section class="py-16 bg-gray-100" id="clima">
   <div class="container mx-auto px-8 text-center">
     <h3 class="text-4xl font-bold text-gray-800 mb-8">Ropa según el clima de tu ciudad</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -116,10 +117,12 @@
 </section>
 
 
-<!-- Testimonios -->
-<section class="container mx-auto py-16 px-8">
+<!-- Opiniones -->
+<section class="container mx-auto py-16 px-8" id="opiniones">
     <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">Lo que dicen nuestros clientes</h3>
+    <!-- contenedor de opiniones -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- primera opinion -->
         <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
             <p class="text-gray-800 mb-4">"¡Me encanta la calidad de los productos! Compré una camiseta y quedó perfecta." - Ana</p>
             <div class="flex items-center">
@@ -127,6 +130,7 @@
                 <span class="font-semibold text-gray-800">Ana Pérez</span>
             </div>
         </div>
+          <!-- segunda opinion -->
         <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
             <p class="text-gray-800 mb-4">"Excelente tienda, siempre encuentro lo que necesito y los envíos son rápidos." - Juan</p>
             <div class="flex items-center">
@@ -134,11 +138,36 @@
                 <span class="font-semibold text-gray-800">Juan García</span>
             </div>
         </div>
+          <!-- tercera opinion -->
         <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
             <p class="text-gray-800 mb-4">"Me sorprendió la rapidez y el estado de los productos. ¡Recomiendo totalmente!" - Marta</p>
             <div class="flex items-center">
                 <img src="" alt="Avatar" class="rounded-full mr-4">
                 <span class="font-semibold text-gray-800">Marta López</span>
+            </div>
+        </div>
+        <!-- cuarta opinion -->
+        <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+            <p class="text-gray-800 mb-4">"La atención al cliente es increíble. Me ayudaron a resolver mi duda al instante." - Pedro</p>
+            <div class="flex items-center">
+                <img src="" alt="Avatar" class="rounded-full mr-4">
+                <span class="font-semibold text-gray-800">Pedro Gómez</span>
+            </div>
+        </div>
+        <!-- quinta opinion -->
+        <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+            <p class="text-gray-800 mb-4">"Los precios son muy competitivos y la calidad nunca decepciona." - Luisa</p>
+            <div class="flex items-center">
+                <img src="" alt="Avatar" class="rounded-full mr-4">
+                <span class="font-semibold text-gray-800">Luisa Fernández</span>
+            </div>
+        </div>
+    <!-- sexta opinion -->
+        <div class="p-6 bg-gray-200 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+            <p class="text-gray-800 mb-4">"Definitivamente volveré a comprar aquí. Todo llegó perfecto y antes de lo esperado." - Carlos</p>
+            <div class="flex items-center">
+                <img src="" alt="Avatar" class="rounded-full mr-4">
+                <span class="font-semibold text-gray-800">Carlos Ramírez</span>
             </div>
         </div>
     </div>
@@ -177,6 +206,7 @@
     </div>
 </footer>
 
+<script src="./js/VideoGame.js"></script>
 <script src="./js/script.js"></script>
 </body>
 </html>

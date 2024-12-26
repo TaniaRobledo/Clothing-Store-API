@@ -1,91 +1,73 @@
 //AUTORIZACIONES
-//Client ID 61fb6b1f7f17a55
-//Client Secret 9721a822f82c20a394dba8ef54a94324fa08ce51
+//Client ID 6c70dcd00919f84
+
+//Client Secret 45e3aa65b820243a731d8d3b9494aac69b7af2ab
 
 
 
 //CLAVE API TIEMPO
 //zliMgA01MzSLcEfnfHEigUiRm4QvtXA3
 
+
+/*Identificación de la aplicación
+690064
+Tecla de acceso
+y6ilt4O-ODyUg9srWWBAfy4rZk6X5YjRdAv7wuxS-fE
+Clave secreta
+EU9_q0IKDtTcKD_OgB4sfYiZVUyABuVQRsWgliwQuMk*/
 //Elementos
-const contenedorProductos = document.getElementById("contenedorProductos");
+const contenedorVideoGames = document.getElementById("contenedorProductos");
 
 
 //URL de los productos
-const url = "https://fakestoreapi.com/products";
+const url = "https://www.freetogame.com/api";
+const url_games = url + "/games"
 
 //Funcion para hacer la petición asíncrona
 const peticion = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
+  console.log("estos osn los datos")
   console.log(data)
   return data;
 }
 
 
-// Realizar la solicitud 
-fetch(url)
-  .then(response => response.json())
-  .then(productos => {
-    //Recorremos cada producto del array de productos
-    productos.forEach(producto => {
-      console.log(`ID: ${producto.id}`);
-      console.log(`Image: ${producto.image}`);
-      console.log(`Nombre: ${producto.title}`);
-      console.log(`Precio: ${producto.price}`);
-      console.log(`Descripcion: ${producto.description}`);
-    });
-  })
 
 // Función para crear elementos
-const crearElementos = (productos) => {
+const crearElementos = (videoGames) => {
   //Declaramos el fragment
   const fragment = document.createDocumentFragment();
 
-  productos.forEach(producto => {
-    // Crear cada tarjeta de producto
-    const contenedorProducto = document.createElement("div");
-    contenedorProducto.classList.add("border", "p-4", "rounded", "shadow");
+  videoGames.forEach(videoGame => {
 
-    const tituloProducto = document.createElement("h3");
-    tituloProducto.classList.add("text-lg", "font-semibold", "mb-2");
-    tituloProducto.textContent = producto.title;
-
-    const imagenProducto = document.createElement("img");
-    imagenProducto.classList.add("mb-2");
-    imagenProducto.src = producto.image; 
+    game = new VideoGame(
+      videoGame.game_url,
+       videoGame.genre,
+        videoGame.id,
+         videoGame.platform,
+           videoGame.short_description,
+            videoGame.thumbnail,
+             videoGame.title,)
     
-
-    const precioProducto = document.createElement("p");
-    precioProducto.classList.add("text-gray-700", "mb-2");
-    precioProducto.textContent = `Precio: ${producto.price}€`;
-
-    const descripcionProducto = document.createElement("p");
-    descripcionProducto.classList.add("text-gray-600", "text-sm", "text-justify");
-    descripcionProducto.textContent = producto.description;
-
-    // Agregar elementos a la tarjeta
-    contenedorProducto.appendChild(tituloProducto);
-    contenedorProducto.appendChild(precioProducto);
-    contenedorProducto.appendChild(imagenProducto);
-    contenedorProducto.appendChild(descripcionProducto);
+    contenedorVideoJuego = game.createContainerVideoGame()
 
     // Agregar la tarjeta al fragmento
-    fragment.appendChild(contenedorProducto);
+    fragment.appendChild(contenedorVideoJuego);
   });
 
   // Agregar el fragmento al contenedor
-  contenedorProductos.appendChild(fragment);
+  contenedorVideoGames.appendChild(fragment);
 };
 
 
 //Funcion para mostrar los productos
 const mostrarProductos = async (url) => {
- const data = await peticion(url);
- crearElementos(data);
+  const data = await peticion(url);
+  crearElementos(data);
 }
 
-mostrarProductos(url)
+mostrarProductos(url_games)
 
 
 /*btn_next.addEventListener("click", () => {
