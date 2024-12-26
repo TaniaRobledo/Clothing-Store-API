@@ -57,14 +57,14 @@ const mostrarProductos = async (url) => {
 mostrarProductos(url_games)
 
 const showDetails = async (event) => {
-  console.log('jnjsdoigfewiòsdnf')
+  console.log('Estoy mostrando')
   const elementOnClick = event.target;
   if (elementOnClick.classList.contains("button_details")){
     // 1- Hacer una peticion a la pai de rawg con el nombre del jeugo al cual perteneezca el boton clicja
     const videoGameName = elementOnClick.parentElement.children[0].textContent
     const url_by_name = url_rawg + videoGameName
     const details = await peticion(url_by_name)
-    localStorage.setItem("videoGameDetails", JSON.stringify(details))
+    localStorage.setItem("videoGameDetails", JSON.stringify(details.results[0]))
     window.location.href = "./pages/details.html"
   }
 }
