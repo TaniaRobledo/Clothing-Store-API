@@ -72,16 +72,3 @@ const showDetails = async (event) => {
 contenedorVideoGames.addEventListener('click', showDetails)
 
 
-/*btn_next.addEventListener("click", () => {
-  main.innerHTML = "";
-  page++
-  const popular_movies_URL = `${URL}/movie/popular?api_key=${API_Key}&page=${page}`;
-  mostrarPeliculas(popular_movies_URL);
-});
-
-btn_previous.addEventListener("click", () => {
-  main.innerHTML = "";
-  page--
-  const popular_movies_URL = `${URL}/movie/popular?api_key=${API_Key}&page=${page}`;
-  mostrarPeliculas(popular_movies_URL);
-});*/
