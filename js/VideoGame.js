@@ -13,38 +13,56 @@ class VideoGame {
     }
 
     createContainerVideoGame(){
+    //Contenedor individual para cada videojuego
+    const contenedorVideoJuego = document.createElement("div");
+    contenedorVideoJuego.classList.add("border", "p-4", "rounded", "shadow", "flex", "flex-col", "justify-end", "w-50");
 
-    const contenedorProducto = document.createElement("div");
-    contenedorProducto.classList.add("border", "p-4", "rounded", "shadow");
+    //Titulo del videojuego
+    const tituloJuego = document.createElement("h3");
+    tituloJuego.classList.add("text-lg", "font-semibold", "mb-2", "h-16", "text-center");
+    tituloJuego.textContent = this.title
 
-    const tituloProducto = document.createElement("h3");
-    tituloProducto.classList.add("text-lg", "font-semibold", "mb-2", "h-20");
-    tituloProducto.textContent = this.title
+    //Imagen del videojuego
+    const imagenJuego = document.createElement("img");
+    imagenJuego.classList.add("mb-2");
+    imagenJuego.src = this.thumbnail; 
 
-    const imagenProducto = document.createElement("img");
-    imagenProducto.classList.add("mb-2");
-    imagenProducto.src = this.thumbnail; 
+    //Plataforma del videojuego
+    const plataformaJuego = document.createElement("p")
+    plataformaJuego.classList.add("text-lg", "font-semibold", "mb-2");
+    plataformaJuego.textContent = this.platform;
 
-    const plataformaVideojuego = document.createElement("p")
-    plataformaVideojuego.classList.add("text-lg", "font-semibold", "mb-2");
-    plataformaVideojuego.textContent = this.platform;
+    //Género del videojuego
+    const generoJuego = document.createElement("p")
+    generoJuego.classList.add("text-lg", "font-semibold", "mb-2", "text-center");
+    generoJuego.textContent = this.genre;
 
     // const precioProducto = document.createElement("p");
     // precioProducto.classList.add("text-gray-700", "mb-2");
     // precioProducto.textContent = `Precio: ${producto.price}€`;
+    
+    //Descripción del videojuego
+    const descripcionJuego = document.createElement("p");
+    descripcionJuego.classList.add("text-gray-600", "text-sm", "text-justify", "mb-10");
+    descripcionJuego.textContent = this.shortDescription;
 
-    const descripcionProducto = document.createElement("p");
-    descripcionProducto.classList.add("text-gray-600", "text-sm", "text-justify");
-    descripcionProducto.textContent = this.shortDescription;
+
+    // Botón para ver el juego
+    const verJuego = document.createElement("button");
+    verJuego.classList.add("button_details", "bg-blue-500", "hover:bg-blue-700", "text-white",  "mb-5", "font-bold", "py-2", "px-4", "rounded", "mx-auto", "block", "w-1/2", "flex" , "flex-end");
+    verJuego.textContent = "Ver juego";
 
     // Agregar elementos a la tarjeta
-    contenedorProducto.appendChild(tituloProducto);
+    contenedorVideoJuego.appendChild(tituloJuego);
     // contenedorProducto.appendChild(precioProducto);
-    contenedorProducto.appendChild(imagenProducto);
-    contenedorProducto.appendChild(plataformaVideojuego);
-    contenedorProducto.appendChild(descripcionProducto);
+    contenedorVideoJuego.appendChild(imagenJuego);
+    contenedorVideoJuego.appendChild(plataformaJuego);
+    contenedorVideoJuego.appendChild(generoJuego);
+    contenedorVideoJuego.appendChild(descripcionJuego);
+    contenedorVideoJuego.appendChild(verJuego);
+    
 
-    return contenedorProducto
+    return contenedorVideoJuego
     }
 
 

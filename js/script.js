@@ -1,34 +1,20 @@
-//AUTORIZACIONES
-//Client ID 6c70dcd00919f84
 
-//Client Secret 45e3aa65b820243a731d8d3b9494aac69b7af2ab
-
-
-
-//CLAVE API TIEMPO
-//zliMgA01MzSLcEfnfHEigUiRm4QvtXA3
-
-
-/*Identificación de la aplicación
-690064
-Tecla de acceso
-y6ilt4O-ODyUg9srWWBAfy4rZk6X5YjRdAv7wuxS-fE
-Clave secreta
-EU9_q0IKDtTcKD_OgB4sfYiZVUyABuVQRsWgliwQuMk*/
-//Elementos
 const contenedorVideoGames = document.getElementById("contenedorProductos");
+
+const rawg_api_key = "9bcf3c9f63b14190af4d0b114a9d3096"
 
 
 //URL de los productos
-const url = "https://www.freetogame.com/api";
-const url_games = url + "/games"
+const url_ftg = "https://www.freetogame.com/api";
+const url_games = url_ftg + "/games"
+const page_size = 1
+
+const url_rawg = `https://api.rawg.io/api/games?key=${rawg_api_key}&page_size=${page_size}&search=`
 
 //Funcion para hacer la petición asíncrona
 const peticion = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
-  console.log("estos osn los datos")
-  console.log(data)
   return data;
 }
 
@@ -67,7 +53,23 @@ const mostrarProductos = async (url) => {
   crearElementos(data);
 }
 
+
 mostrarProductos(url_games)
+
+const showDetails = async (event) => {
+  console.log('jnjsdoigfewiòsdnf')
+  const elementOnClick = event.target;
+  if (elementOnClick.classList.contains("button_details")){
+    // 1- Hacer una peticion a la pai de rawg con el nombre del jeugo al cual perteneezca el boton clicja
+    const videoGameName = elementOnClick.parentElement.children[0].textContent
+    const url_by_name = url_rawg + videoGameName
+    const details = await peticion(url_by_name)
+    localStorage.setItem("videoGameDetails", JSON.stringify(details))
+    window.location.href = "./pages/details.html"
+  }
+}
+
+contenedorVideoGames.addEventListener('click', showDetails)
 
 
 /*btn_next.addEventListener("click", () => {
