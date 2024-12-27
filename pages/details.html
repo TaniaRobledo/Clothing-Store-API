@@ -7,36 +7,39 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 flex justify-center items-center h-screen flex-col">
-    <h1 class="text-black text-4xl">VideoGame Details</h1>
+<body>
+    <div class="bg-gray-100 min-h-screen flex justify-center items-center py-8">
+        <div class="container max-w-7xl w-full bg-white p-8 rounded-lg shadow-lg">
+            <h1 class="text-black text-4xl text-center mb-6">VideoGame Details</h1>
+    
+            <!-- Contenedor para la imagen y la descripción del videojuego -->
+            <div id="game" class="w-full h-48 bg-gray-700 flex items-center justify-center mb-10" style="height: 440px;">
+                <div id="game_image" class="flex items-center justify-start">
+                <!-- Aquí va la imagen del juego -->
+                </div>
 
-      <!-- Contenedor para la imagen y la descripción del videojuego -->
-      <div id="game_image" class="w-full h-2/3 bg-gray-800 flex items-center justify-start">
-        <!-- Aquí va la imagen del juego -->
-       
-          <div class="game_description">
-            <h2 class="text-black text-2xl">Game Description</h2>
-            <!-- Aqui va el nombre del juego -->
-             <p id="game_name" class="text-black text-2xl font-bold"> </p>
-              <!-- Aqui va la descripcion del videojuego -->
-          </div>
+                <!-- Detalles del juego -->
+                <div class="game_description px-4">
+                    <h2 class="text-white text-2xl">Game Description</h2>
+                    <!-- Aquí va el nombre del juego -->
+                    <p id="game_name" class="text-black text-2xl font-bold text-center"> </p>
+                    <!-- Aquí va la plataforma del videojuego -->
+                     <p id="game_plataforms">Plataforma: </p>
+                </div>
+            </div>
+    
+        
+            <div id="screenshots-container" class="flex flex-wrap gap-3 justify-center items-center w-full p-4 bg-gray-200">
+                <!-- Aquí se agregarán las imágenes dinámicamente -->
+            </div>
+        </div>
     </div>
+    
+    
+    
+        
 
-  
-
-    <!-- Contenedor inferior para otras imágenes -->
-    <div class="w-full h-1/3 bg-gray-200 flex items-center justify-center">
-        <p class="text-black text-xl">
-            <!-- Mas fotos del juego pequeñas -->
-        </p>
-    </div>
-
-    <div id="screenshots-container" class="flex flex-wrap gap-2 justify-center items-center w-full p-4 bg-gray-100">
-    <!-- Aquí se agregarán las imágenes dinámicamente -->
-</div>
-
-      
-        <script src="../js/details.js"></script>
+<script src="../js/details.js"></script>
 
 </body>
 </html>
