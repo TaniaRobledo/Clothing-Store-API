@@ -10,9 +10,16 @@
 <body class="bg-gray-100 flex justify-center items-center h-screen flex-col">
     <h1 class="text-black text-4xl">VideoGame Details</h1>
 
-      <!-- Contenedor para la imagen del videojuego -->
+      <!-- Contenedor para la imagen y la descripción del videojuego -->
       <div id="game_image" class="w-full h-2/3 bg-gray-800 flex items-center justify-start">
         <!-- Aquí va la imagen del juego -->
+       
+          <div class="game_description">
+            <h2 class="text-black text-2xl">Game Description</h2>
+            <!-- Aqui va el nombre del juego -->
+             <p id="game_name" class="text-black text-2xl font-bold"> </p>
+              <!-- Aqui va la descripcion del videojuego -->
+          </div>
     </div>
 
   
@@ -23,6 +30,11 @@
             <!-- Mas fotos del juego pequeñas -->
         </p>
     </div>
+
+    <div id="screenshots-container" class="flex flex-wrap gap-2 justify-center items-center w-full p-4 bg-gray-100">
+    <!-- Aquí se agregarán las imágenes dinámicamente -->
+</div>
+
       
         <script src="../js/details.js"></script>
 
