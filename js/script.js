@@ -14,6 +14,7 @@ const rawg_api_key = "9bcf3c9f63b14190af4d0b114a9d3096"
 //URL de los productos
 const url_ftg = "https://www.freetogame.com/api";
 const url_games = url_ftg + "/games"
+const url_game = url_ftg + "/game?id="
 const page_size = 1
 
 const url_rawg = `https://api.rawg.io/api/games?key=${rawg_api_key}&page_size=${page_size}&search=`
@@ -34,13 +35,13 @@ const crearElementos = (videoGames) => {
 
     game = new VideoGame(
       videoGame.game_url,
-       videoGame.genre,
-        videoGame.id,
-         videoGame.platform,
-           videoGame.short_description,
-            videoGame.thumbnail,
-             videoGame.title,)
-    
+      videoGame.genre,
+      videoGame.id,
+      videoGame.platform,
+      videoGame.short_description,
+      videoGame.thumbnail,
+      videoGame.title,)
+
     contenedorVideoJuego = game.createContainerVideoGame()
 
     // Agregar la tarjeta al fragmento
@@ -64,13 +65,31 @@ mostrarProductos(url_games)
 const showDetails = async (event) => {
   console.log('Estoy mostrando')
   const elementOnClick = event.target;
-  if (elementOnClick.classList.contains("button_details")){
+  if (elementOnClick.classList.contains("button_details")) {
+    // Hacer peticion sobre el id de l juego para tener la descripcion grande
+
     // 1- Hacer una peticion a la pai de rawg con el nombre del jeugo al cual perteneezca el boton clicja
     const videoGameName = elementOnClick.parentElement.children[0].textContent
-    const url_by_name = url_rawg + videoGameName
-    const details = await peticion(url_by_name)
-    localStorage.setItem("videoGameDetails", JSON.stringify(details.results[0]))
-    window.location.href = "./pages/details.html"
+    const elementId = elementOnClick.parentElement.children[1].textContent
+    // 1- Hacer una peticion a la API de FreeToGame con el ID del juego
+    const videoGameDetailsFreeToGame = await peticion(url_game + elementId);
+
+    // Ahora puedes acceder a la descripción correctamente
+    const description = videoGameDetailsFreeToGame.description;
+
+    // Realizar la petición a Rawg
+    const url_by_name = url_rawg + videoGameName;
+    const details = await peticion(url_by_name);
+
+    // Crear un objeto con los detalles y la descripción
+    const fullDetails = { ...details.results[0], description };
+
+    // Guardar los detalles en localStorage
+    localStorage.setItem("videoGameDetails", JSON.stringify(fullDetails));
+
+    // Redirigir a la página de detalles
+    window.location.href = "./pages/details.html";
+
   }
 }
 

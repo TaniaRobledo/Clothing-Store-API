@@ -37,9 +37,9 @@ class VideoGame {
     generoJuego.classList.add("text-lg", "font-semibold", "mb-2", "text-center");
     generoJuego.textContent = this.genre;
 
-    // const precioProducto = document.createElement("p");
-    // precioProducto.classList.add("text-gray-700", "mb-2");
-    // precioProducto.textContent = `Precio: ${producto.price}€`;
+    const idGame = document.createElement("p");
+    idGame.classList.add("text-gray-700", "mb-2");
+    idGame.textContent = this.id;
     
     //Descripción del videojuego
     const descripcionJuego = document.createElement("p");
@@ -54,7 +54,7 @@ class VideoGame {
 
     // Agregar elementos a la tarjeta
     contenedorVideoJuego.appendChild(tituloJuego);
-    // contenedorProducto.appendChild(precioProducto);
+    contenedorVideoJuego.appendChild(idGame);
     contenedorVideoJuego.appendChild(imagenJuego);
     contenedorVideoJuego.appendChild(plataformaJuego);
     contenedorVideoJuego.appendChild(generoJuego);

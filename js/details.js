@@ -4,6 +4,8 @@ const getLsItem = () => {
   return JSON.parse(localStorage.getItem(item_name));
 };
 
+
+
 // Obtener los datos del videojuego
 const videoGameDetails = getLsItem();
 
@@ -15,10 +17,8 @@ if (videoGameDetails && videoGameDetails.background_image) {
   // Crear una etiqueta img
   const img = document.createElement('img');
   img.src = videoGameDetails.background_image;
-  img.style.width =  '50%'; 
-  img.style.margin = '10px'; 
-  img.style.height = '100%';  
-  img.style.objectFit = 'contain';  
+  img.classList.add('w-[7000px]', 'm-4', 'p-4', 'h-full', 'object-contain');
+
 
 
   // Agregar la imagen al contenedor
@@ -56,6 +56,18 @@ if (videoGameDetails && videoGameDetails.platforms) {
   
   // Mostrar el nombre de la plataforma 
   game_plataforms.textContent = platformName;
+}
+
+
+// Obtener la descripciion del juego
+if (videoGameDetails && videoGameDetails.platforms) {
+  const game_description = document.getElementById('game_description');
+  
+  // Acceder al nombre 
+  const descriptionGame = videoGameDetails.description;
+  
+  // Mostrar el nombre de la plataforma 
+  game_description.textContent = descriptionGame;
 }
 
 
