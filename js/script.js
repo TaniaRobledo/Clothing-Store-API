@@ -1,6 +1,13 @@
-
+//Elementos
 const contenedorVideoGames = document.getElementById("contenedorProductos");
 
+//PRIMERA API
+//https://www.freetogame.com/
+
+//SEGUNDA API
+////https://rawg.io/apidocs
+
+//API KEY
 const rawg_api_key = "9bcf3c9f63b14190af4d0b114a9d3096"
 
 
@@ -17,8 +24,6 @@ const peticion = async (url) => {
   const data = await response.json();
   return data;
 }
-
-
 
 // Función para crear elementos
 const crearElementos = (videoGames) => {
