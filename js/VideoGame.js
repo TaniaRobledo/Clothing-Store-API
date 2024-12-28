@@ -53,7 +53,7 @@ class VideoGame {
    
        // Botón para ver el juego
        const verJuego = document.createElement("button");
-       verJuego.classList.add("button_details", "bg-blue-500", "hover:bg-blue-700", "text-white", "mb-5", "font-bold", "py-2", "px-4", "rounded", "mx-auto", "block", "w-1/2", "flex", "flex-end");
+       verJuego.classList.add("button_details", "bg-purple-500", "hover:bg-purple-700", "text-white", "mb-5", "font-bold", "py-2", "px-4", "rounded", "mx-auto", "block", "w-1/2", "flex", "flex-end");
        verJuego.textContent = "Ver juego";
 
     

@@ -31,6 +31,7 @@ const crearElementos = (videoGames) => {
   //Declaramos el fragment
   const fragment = document.createDocumentFragment();
 
+  //Por cada videojuego me creo un objeto videojuego
   videoGames.forEach(videoGame => {
 
     game = new VideoGame(
@@ -62,6 +63,7 @@ const mostrarProductos = async (url) => {
 
 mostrarProductos(url_games)
 
+//Funcion mostrar detalles
 const showDetails = async (event) => {
   console.log('Estoy mostrando')
   const elementOnClick = event.target;

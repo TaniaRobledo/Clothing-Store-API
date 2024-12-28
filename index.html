@@ -13,14 +13,14 @@
 <header class="bg-light-blue shadow-lg">
     <div class="container mx-auto py-6 px-8 flex items-center justify-between flex-col md:flex-row">
         <!-- Logo -->
-        <img src="./assets/images/Pagina_1/logo.png" alt="Imagen logo" class="w-40 h-40 mb-4 md:mb-0">
+        <img src="./assets/images/Index/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
       
         <!-- Barra de navegación centrada -->
-        <nav class="bg-gray-300 p-4 rounded-lg md:flex-1">
+        <nav class="bg-gray-300 p-4 rounded-lg md:flex-1 bg-purple-300">
             <ul class="flex space-x-8 justify-center">
-                <li><a href="#productos" class="text-gray-600 hover:text-gray-400">Videojuegos</a></li>
-                <li><a href="#clima" class="text-gray-600 hover:text-gray-400">Ropa según el clima</a></li>
-                <li><a href="#opiniones" class="text-gray-600 hover:text-gray-400">Opiniones de nuestros cliente</a></li>
+                <li><a href="#productos" class="text-gray-600 text-lg hover:text-white">Carta de Videojuegos</a></li>
+                <li><a href="#opiniones" class="text-gray-600 text-lg hover:text-white">Opiniones de nuestros cliente</a></li>
+                <li><a href="#contacto" class="text-gray-600 text-lg hover:text-white">Contáctanos</a></li>
             </ul>
         </nav>
       
@@ -37,73 +37,21 @@
             <!-- Botón Buscar -->
             <button 
                 id="buscarBtn" 
-                class="px-6 py-3 bg-gray-500 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                class="px-6 py-3 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition-colors">
                 Buscar
             </button>
         </div>
-    </div>
+   
 </header>
 
 <!-- Contenedor para las tarjetas de los productos -->
 <main class="container mx-auto py-12 px-8" id="productos">
-    <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Nuestros Productos</h2>
+    <h2 class="text-3xl font-bold text-gray-800 mb-10 text-center">Videojuegos Trending</h2>
     <div id="contenedorProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         <!-- Tarjetas de productos -->
       
     </div>
 </main>
-
-
-<!-- Sección de ropa según el clima -->
-<section class="py-16 bg-gray-100" id="clima">
-  <div class="container mx-auto px-8 text-center">
-    <h3 class="text-4xl font-bold text-gray-800 mb-8">Ropa según el clima de tu ciudad</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Tarjeta de clima -->
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Madrid</h4>
-        <p class="text-gray-600">Temperatura: 15°C</p>
-        <p class="text-gray-600 capitalize">Clima: Despejado</p>
-        <p class="text-gray-800 font-bold mt-4">Recomendación: Chaquetas ligeras y ropa de entretiempo.</p>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Barcelona</h4>
-        <p class="text-gray-600">Temperatura: 22°C</p>
-        <p class="text-gray-600 capitalize">Clima: Soleado</p>
-        <p class="text-gray-800 font-bold mt-4">Recomendación: Ropa ligera como camisetas y pantalones cortos.</p>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Sevilla</h4>
-        <p class="text-gray-600">Temperatura: 30°C</p>
-        <p class="text-gray-600 capitalize">Clima: Caluroso</p>
-        <p class="text-gray-800 font-bold mt-4">Recomendación: Ropa fresca como vestidos y sandalias.</p>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Bilbao</h4>
-        <p class="text-gray-600">Temperatura: 10°C</p>
-        <p class="text-gray-600 capitalize">Clima: Lluvioso</p>
-        <p class="text-gray-800 font-bold mt-4">Recomendación: Abrigos impermeables y botas.</p>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Valencia</h4>
-        <p class="text-gray-600">Temperatura: 18°C</p>
-        <p class="text-gray-600 capitalize">Clima: Parcialmente nublado</p>
-        <p class="text-gray-800 font-bold mt-4">Recomendación: Chaquetas ligeras y ropa de entretiempo.</p>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg p-6">
-        <h4 class="text-xl font-semibold text-gray-800 mb-2">Toledo</h4>
-        <p class="text-gray-600">Temperatura: 20°C</p>
-        <p class="text-gray-600 capitalize">Clima: Parcialmente nublado</p>
-        <p class="text-gray-800 font-bold mt-4">Recomendación: Chaquetas ligeras y ropa de entretiempo.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 
 <!-- Opiniones -->
@@ -169,7 +117,7 @@
   </div>
 
 <!-- Pie de página -->
-<footer class="bg-gray-800 text-gray-300 py-8">
+<footer class="bg-gray-800 text-gray-300 py-8" id="contacto">
     <div class="container mx-auto px-4 text-center md:text-left">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Columna de información -->
@@ -200,7 +148,7 @@
         </div>
     </div>
 </footer>
-
+</div>
 <script src="./js/VideoGame.js"></script>
 <script src="./js/script.js"></script>
 </body>

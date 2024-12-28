@@ -48,6 +48,7 @@ if (videoGameDetails && videoGameDetails.platforms) {
   
   // Acceder al nombre 
   const platformName = videoGameDetails.platforms[0].platform.name;
+
   
   // Mostrar el nombre de la plataforma 
   game_plataforms.textContent = `Plataforma de juego: ${platformName}`;
