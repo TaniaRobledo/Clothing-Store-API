@@ -17,7 +17,7 @@ if (videoGameDetails && videoGameDetails.background_image) {
   // Crear una etiqueta img
   const img = document.createElement('img');
   img.src = videoGameDetails.background_image;
-  img.classList.add('w-[7000px]', 'm-4', 'p-4', 'h-full', 'object-contain');
+  img.classList.add('w-[7000px]','m-4', 'p-4', 'h-full', 'object-contain',  'rounded-xl');
 
 
 
@@ -31,10 +31,7 @@ if (videoGameDetails && videoGameDetails.background_image) {
 
   // Crear una etiqueta <img> para la imagen por defecto
   const img = document.createElement('img');
-  img.src = defaultImage;
-  img.style.width = 'auto';
-  img.style.height = '100%';
-  img.style.objectFit = 'contain';
+  img.classList.add('w-[7000px]', 'm-4', 'p-4', 'h-full', 'object-contain', 'rounded-xl');
 
   // Agregar la imagen al contenedor
   gameImageContainer.appendChild(img);
@@ -55,7 +52,7 @@ if (videoGameDetails && videoGameDetails.platforms) {
   const platformName = videoGameDetails.platforms[0].platform.name;
   
   // Mostrar el nombre de la plataforma 
-  game_plataforms.textContent = platformName;
+  game_plataforms.textContent = `Plataforma de juego: ${platformName}`;
 }
 
 
@@ -63,32 +60,40 @@ if (videoGameDetails && videoGameDetails.platforms) {
 if (videoGameDetails && videoGameDetails.platforms) {
   const game_description = document.getElementById('game_description');
   
-  // Acceder al nombre 
+  // Acceder a la descripcion 
   const descriptionGame = videoGameDetails.description;
   
-  // Mostrar el nombre de la plataforma 
+  // Mostrar la descripcion
   game_description.textContent = descriptionGame;
+  
 }
 
 
-// Seleccionar el contenedor donde se agregarán las imágenes
-const screenshotsContainer = document.getElementById('screenshots-container');
+//Elemento
+const scrollContainer = document.getElementById('scroll_container');
 
 // Verificar si el objeto tiene imágenes
 if (videoGameDetails && videoGameDetails.short_screenshots) {
-  // Recorrer las imágenes y generar contenedores dinámicamente
+  // Recorrer las imágenes de la API
   videoGameDetails.short_screenshots.forEach((screenshot) => {
-    // Crear un elemento img para cada screenshot
-    const image= document.createElement('img');
-    image.src = screenshot.image;
-    image.classList.add('h-32', 'object-cover', 'rounded', 'shadow', 'mb-8'); 
-    
+    // Crear un nueva etiqueta img
+    const img = document.createElement('img');
+    img.src = screenshot.image; //Añado la que me viene de la API
+    img.classList.add(
+      'rounded-xl', 
+      'transform', 
+      'transition', 
+      'duration-300', 
+      'hover:scale-95', 
+      'w-44', 
+      'h-auto',
+       'mb-5'
+    ); 
+
     // Agregar la imagen al contenedor
-    screenshotsContainer.appendChild(image);
+    scrollContainer.appendChild(img);
   });
 } else {
-  // Si no hay imageens disponibles mostramos mensaje
-  screenshotsContainer.innerHTML = '<p class="text-gray-500">No hay imágenes disponibles para este juego.</p>';
+  // Si no hay imágenes disponibles
+  scrollContainer.innerHTML = '<p class="text-gray-500">No hay imágenes disponibles.</p>';
 }
-
-

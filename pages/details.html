@@ -8,9 +8,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+    <!-- Container general -->
     <div class="bg-gray-100 min-h-screen flex justify-center items-center py-8">
+        <!-- Container -->
         <div class="container max-w-7xl w-full bg-white p-8 rounded-lg shadow-lg">
-            <h1 class="text-black text-4xl text-center mb-6">VideoGame Details</h1>
+            <h1 class="text-gray-600 text-4xl text-center mb-6">Game Explorer</h1>
     
             <!-- Contenedor para la imagen y la descripción del videojuego -->
             <div id="game" class="w-full h-48 bg-gray-700 flex items-center justify-center mb-10" style="height: 440px;">
@@ -19,23 +21,34 @@
                 </div>
 
                 <!-- Detalles del juego -->
-                <div class="game_details px-4">
-                    <h2 class="text-white text-2xl">Game Description</h2>
+                <div class="game_details m-4">
+                    <h2 class="text-white text-2xl text-center m-4">Carcaterísticas del juego</h2>
                     <!-- Aquí va el nombre del juego -->
-                    <p id="game_name" class="text-black text-2xl font-bold text-center"> </p>
+                    <p id="game_name" class="text-gray-900 text-2xl font-bold text-center m-2"> </p>
                     <!-- Aquí va la plataforma del videojuego -->
-                     <p>Plataforma</p>
-                     <p id="game_plataforms">Plataforma: </p>
+                     <p id="game_plataforms" class="text-lg text-lg m-1 text-gray-200"></p>
                      <!-- Aquí va la descripción del videojuego -->
-                      <p id="game_description" class="text-white text-justify"></p>
+                      <p id="game_description" class="text-white text-justify text-xs"></p>
                 </div>
             </div>
     
-        
+            <!-- Imagenes pequeñas de abajo -->
             <div id="screenshots-container" class="flex flex-wrap gap-3 justify-center items-center w-full p-4 bg-gray-200">
-                <!-- Aquí se agregarán las imágenes dinámicamente -->
+
+            <p class="sm:ml-10 md:ml-16 lg:ml-24 text-gray-600 text-2xl sm:text-3xl md:text-4xl font-bold mt-8" id="populares">¡Vive la aventura!</p>
+            <div class="flex flex-col justify-center items-center">
+                <div class="flex flex-col justify-center items-center">
+                    <div id="scroll_container" class="flex m-10 gap-6 w-[1000px] overflow-x-scroll overflow-y-hidden mb-4">
+                      <!-- Aquí van las imagenes pequeñas -->
+                    </div>
+                  </div>
+                  
             </div>
+            <!-- Imagenes pequeñas de abajo -->
         </div>
+            <!-- container -->
+        </div>
+        <!-- container general -->
     </div>
     
     
