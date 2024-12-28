@@ -8,6 +8,41 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
+
+    <!-- Encabezado -->
+<header class="bg-light-blue shadow-lg">
+    <div class="container mx-auto py-6 px-8 flex items-center justify-between flex-col md:flex-row bg-gray-100">
+        <!-- Logo -->
+        <img src="../assets/images/Index/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
+      
+        <!-- Barra de navegación centrada -->
+        <nav class="bg-gray-300 p-4 rounded-lg md:flex-1 bg-purple-300">
+            <ul class="flex space-x-8 justify-center">
+                <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Carta de Videojuegos</a></li>
+                <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Opiniones de nuestros cliente</a></li>
+                <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Contáctanos</a></li>
+            </ul>
+        </nav>
+      
+        <!-- Barra de búsqueda y botón -->
+        <div class="flex items-center space-x-4 mt-4 md:mt-0">
+            <!-- Input más pequeño con borde gris -->
+            <label for="buscarInput" class="sr-only">Buscar producto</label>
+            <input 
+                type="text" 
+                id="buscarInput" 
+                placeholder="Buscar producto..." 
+                class="w-48 px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            
+            <!-- Botón Buscar -->
+            <button 
+                id="buscarBtn" 
+                class="px-6 py-3 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                Buscar
+            </button>
+        </div>
+   
+</header>
     
     <!-- Container general -->
     <div class="bg-gray-100 min-h-screen flex justify-center items-center py-8" 

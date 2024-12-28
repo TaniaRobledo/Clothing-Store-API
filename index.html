@@ -18,9 +18,9 @@
         <!-- Barra de navegación centrada -->
         <nav class="bg-gray-300 p-4 rounded-lg md:flex-1 bg-purple-300">
             <ul class="flex space-x-8 justify-center">
-                <li><a href="#productos" class="text-gray-600 text-lg hover:text-white">Carta de Videojuegos</a></li>
-                <li><a href="#opiniones" class="text-gray-600 text-lg hover:text-white">Opiniones de nuestros cliente</a></li>
-                <li><a href="#contacto" class="text-gray-600 text-lg hover:text-white">Contáctanos</a></li>
+                <li><a href="#productos" class="text-white text-lg hover:text-gray-600">Carta de Videojuegos</a></li>
+                <li><a href="#opiniones" class="text-white text-lg hover:text-gray-600">Opiniones de nuestros cliente</a></li>
+                <li><a href="#contacto" class="text-white text-lg hover:text-gray-600">Contáctanos</a></li>
             </ul>
         </nav>
       
@@ -110,11 +110,16 @@
     </div>
 </section>
 
-<!-- Botones para pasar de página -->
-<div class="flex justify-center mt-4">
-    <button id="prev-btn" class="bg-blue-500 text-white px-4 py-2 rounded" disabled>Anterior</button>
-    <button id="next-btn" class="bg-blue-500 text-white px-4 py-2 rounded">Siguiente</button>
-  </div>
+
+    <!-- Botones para pasar de página -->
+    <div class="flex justify-end mt-4 m-10">
+        <button id="boton_siguiente" class="bg-purple-400 text-white text-xl px-4 py-2 rounded m-5 hover:bg-purple-500 flex items-center justify-center" style="width: 300px;">
+             Siguiente página
+            <img src="./assets/images/Index/flecha.png" alt="flecha" class="ml-2 ml-4" style="width: 40px; height: 40px;">
+        </button>
+     </div>
+  
+</div>
 
 <!-- Pie de página -->
 <footer class="bg-gray-800 text-gray-300 py-8" id="contacto">
