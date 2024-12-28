@@ -19,8 +19,6 @@ if (videoGameDetails && videoGameDetails.background_image) {
   img.src = videoGameDetails.background_image;
   img.classList.add('w-[7000px]','m-4', 'p-4', 'h-full', 'object-contain',  'rounded-xl');
 
-
-
   // Agregar la imagen al contenedor
   gameImageContainer.appendChild(img);
 
@@ -85,7 +83,7 @@ if (videoGameDetails && videoGameDetails.short_screenshots) {
       'transition', 
       'duration-300', 
       'hover:scale-95', 
-      'w-44', 
+      'w-60', 
       'h-auto',
        'mb-5'
     ); 
