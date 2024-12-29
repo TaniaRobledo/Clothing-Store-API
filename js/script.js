@@ -8,7 +8,12 @@ const contenedorVideoGames = document.getElementById("contenedorProductos");
 ////https://rawg.io/apidocs
 
 // Paginas
-let page = 1; 
+let page = 1
+
+if(localStorage.getItem('page'))
+  page = localStorage.getItem('page')
+localStorage.removeItem('page')
+
 let limite_elementos = 5;
 let videoGames = {}
 
@@ -121,6 +126,10 @@ const showDetails = async (event) => {
   }
 }
 
+const guardarPageEnLS = (page) => {
+  localStorage.setItem('page', page)
+}
+
 
 //Elementos para paginación
 next_button = document.getElementById("next_button");
@@ -150,6 +159,9 @@ previous_button.addEventListener("click", () => {
 });
 
 
-contenedorVideoGames.addEventListener('click', showDetails)
+contenedorVideoGames.addEventListener('click', () => {
+  guardarPageEnLS(page)
+  showDetails(event)
+})
 
 
