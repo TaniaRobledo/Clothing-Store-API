@@ -1,7 +1,30 @@
 // Recuperar el objeto del localStorage
 const getLsItem = () => {
+  //Por el nombre que le hemos dado
   const item_name = "videoGameDetails";
+  //Lo convertimos a jsnon
   return JSON.parse(localStorage.getItem(item_name));
+};
+const getImagePlatform = (platform_name) => {
+  const platformNameLower = platform_name.toLowerCase();
+
+  // Verificar si platform_name contiene alguna de las opciones y asignar la clase correspondiente
+  if (platformNameLower.includes("pc")) {
+    return `<img title="${platform_name}" class="icon pc-icon" src="../assets/images/icons/windows-brands-solid.svg" alt="Icono SVG">`;
+  }
+  if (platformNameLower.includes("xbox")) {
+    return `<img title="${platform_name}" class="icon xbox-icon" src="../assets/images/icons/xbox-brands-solid.svg" alt="Icono SVG">`;
+  }
+
+  if (platformNameLower.includes("playstation")) {
+    return `<img title="${platform_name}" class="icon playstation-icon" src="../assets/images/icons/playstation-brands-solid.svg" alt="Icono SVG">`;
+  }
+
+  if (platformNameLower.includes("nintendo")) {
+    return `<img title="${platform_name}" class="icon nintendo-icon" src="../assets/images/icons/gamepad-solid.svg" alt="Icono SVG">`;
+  }
+
+  return `<img title="${platform_name}" class="icon other-icon" src="../assets/images/icons/desktop-solid.svg" alt="Icono SVG">`;
 };
 
 
@@ -11,7 +34,7 @@ const videoGameDetails = getLsItem();
 
 // Obtener la imagen
 if (videoGameDetails && videoGameDetails.background_image) {
-  // Seleccionar el contenedor
+  // Crear el contenedor grabde
   const gameImageContainer = document.getElementById('game_image');
 
   // Crear una etiqueta img
@@ -28,11 +51,11 @@ if (videoGameDetails && videoGameDetails.background_image) {
   const gameImageContainer = document.getElementById('game_image');
 
   // Crear una etiqueta <img> para la imagen por defecto
-  const img = document.createElement('img');
-  img.classList.add('w-[7000px]', 'm-4', 'p-4', 'h-full', 'object-contain', 'rounded-xl');
+  const img_null = document.createElement('img');
+  img_null.classList.add('w-[7000px]', 'm-4', 'p-4', 'h-full', 'object-contain', 'rounded-xl');
 
   // Agregar la imagen al contenedor
-  gameImageContainer.appendChild(img);
+  gameImageContainer.appendChild(img_null);
 }
 
 
@@ -45,13 +68,17 @@ if(videoGameDetails && videoGameDetails.name){
 // Obtener la plataforma del juego
 if (videoGameDetails && videoGameDetails.platforms) {
   const game_plataforms = document.getElementById('game_plataforms');
-  
-  // Acceder al nombre 
-  const platformName = videoGameDetails.platforms[0].platform.name;
+  game_plataforms.classList.add('flex', 'flex-wrap', 'gap-2', 'm-4');
 
+  const span = document.createElement('span')
+  span.textContent = `Plataforma de juego: `;
+
+  const icons = document.createElement('div');
+  icons.classList.add('flex', 'flex-wrap', 'gap-2');
+  videoGameDetails.platforms.forEach((item) =>  icons.innerHTML += getImagePlatform(item.platform.name));
   
-  // Mostrar el nombre de la plataforma 
-  game_plataforms.textContent = `Plataforma de juego: ${platformName}`;
+  game_plataforms.appendChild(span)
+  game_plataforms.appendChild(icons)
 }
 
 

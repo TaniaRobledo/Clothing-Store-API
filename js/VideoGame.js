@@ -55,8 +55,6 @@ class VideoGame {
        verJuego.classList.add("button_details", "bg-purple-500", "hover:bg-purple-700", "text-white", "mb-5", "font-bold", "py-2", "px-4", "rounded", "mx-auto", "block", "w-1/2", "flex", "flex-end");
        verJuego.textContent = "Ver juego";
 
-    
-
     // Agregar elementos a la tarjeta
     contenedorVideoJuego.appendChild(tituloJuego);
     contenedorVideoJuego.appendChild(idGame);
@@ -67,7 +65,7 @@ class VideoGame {
     contenedorVideoJuego.appendChild(verJuego);
     
 
-    return contenedorVideoJuego
+    return contenedorVideoJuego;
     }
 
 

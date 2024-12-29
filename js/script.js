@@ -64,40 +64,40 @@ const crearElementos = (videoGames) => {
 
 //Funcion para mostrar los productos
 const mostrarProductos = async (url) => {
-  console.log('muestro productos')
-  console.log(url)
+  //console.log('muestro productos')
+  //console.log(url)
   const data = await peticion(url);
   crearElementos(data);
 }
 
-
+//Llamo a mostrar productos
 mostrarProductos(url_games)
 
-//Funcion mostrar detalles
+//Funcion mostrar detalles de la API de rawg
 const showDetails = async (event) => {
-  console.log('Estoy mostrando')
+  //console.log('Estoy mostrando')
   const elementOnClick = event.target;
   if (elementOnClick.classList.contains("button_details")) {
-    // Hacer peticion sobre el id de l juego para tener la descripcion grande
-
     // 1- Hacer una peticion a la pai de rawg con el nombre del jeugo al cual perteneezca el boton clicja
     const videoGameName = elementOnClick.parentElement.children[0].textContent
     const elementId = elementOnClick.parentElement.children[1].textContent
-    // 1- Hacer una peticion a la API de FreeToGame con el ID del juego
+    // 2- Hacer una peticion a la API de FreeToGame con el ID del juego
     const videoGameDetailsFreeToGame = await peticion(url_game + elementId);
 
-    // Ahora puedes acceder a la descripción correctamente
+    // Descripcion
     const description = videoGameDetailsFreeToGame.description;
+    console.log(videoGameDetailsFreeToGame)
+    console.log(description)
 
-    // Realizar la petición a Rawg
+    // Realizar la petición a Rawg mediante elnombre de la API de freetogame
     const url_by_name = url_rawg + videoGameName;
     const details = await peticion(url_by_name);
 
     // Crear un objeto con los detalles y la descripción
-    const fullDetails = { ...details.results[0], description };
+    const gameDetails = { ...details.results[0], description };
 
-    // Guardar los detalles en localStorage
-    localStorage.setItem("videoGameDetails", JSON.stringify(fullDetails));
+    // Guardar los detalles en localStorage pasandole el objeto y convirtiendolo a String
+    localStorage.setItem("videoGameDetails", JSON.stringify(gameDetails));
 
     // Redirigir a la página de detalles
     window.location.href = "./pages/details.html";
@@ -106,20 +106,19 @@ const showDetails = async (event) => {
 }
 
 
-
-//Elementos
+//Elementos para paginación
 next_button = document.getElementById("next_button");
 main = document.getElementById("main");
 
 // Pagina siguiente
 next_button.addEventListener("click", () => {
-  console.log("Estoy haciendo clicj")
+  //console.log("Estoy haciendo clicj")
   page++;
 
   contenedorVideoGames.innerHTML = "";  // Limpiamos la página actual
   const url_games = `${url_ftg}/games?page=${page}&limit=${limite_elementos}`;
   mostrarProductos(url_games);
-  console.log(url_games)
+  //console.log(url_games)
 
 
 });
