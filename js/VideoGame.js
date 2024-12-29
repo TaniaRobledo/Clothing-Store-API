@@ -15,7 +15,7 @@ class VideoGame {
     createContainerVideoGame(){
        // Contenedor individual para cada videojuego
        const contenedorVideoJuego = document.createElement("div");
-       
+
        //Estilos para el contenedor de cada tarjeta de juego
        contenedorVideoJuego.classList.add("border", "border-gray-400", "bg-gray-300", "p-4", "rounded", "shadow", 
         "flex", "flex-col", "justify-between", "h-full", "w-50", 'transform', 'transition', 'duration-300', 'hover:scale-105');
@@ -50,7 +50,7 @@ class VideoGame {
        descripcionJuego.classList.add("text-gray-600", "text-sm", "text-justify", "mb-10");
        descripcionJuego.textContent = this.shortDescription;
    
-       // Botón para ver el juego
+       // Botón para ver el juego en la API de rawg
        const verJuego = document.createElement("button");
        verJuego.classList.add("button_details", "bg-purple-500", "hover:bg-purple-700", "text-white", "mb-5", "font-bold", "py-2", "px-4", "rounded", "mx-auto", "block", "w-1/2", "flex", "flex-end");
        verJuego.textContent = "Ver juego";
