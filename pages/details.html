@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VideoGame</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="./assets/images/Index/favicon3.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -15,18 +16,19 @@
         <!-- Logo -->
         <img src="../assets/images/Index/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
       
-        <!-- Barra de navegación centrada -->
+        <!-- Menú -->
         <nav class="bg-gray-300 p-4 rounded-lg md:flex-1 bg-purple-300">
             <ul class="flex space-x-8 justify-center">
+                <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Inicio</a></li>
                 <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Carta de Videojuegos</a></li>
                 <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Opiniones de nuestros cliente</a></li>
                 <li><a href="../index.html" class="text-white text-lg hover:text-gray-600" target="_blank">Contáctanos</a></li>
             </ul>
         </nav>
       
-        <!-- Barra de búsqueda y botón -->
+        <!-- Barra de búsqueda -->
         <div class="flex items-center space-x-4 mt-4 md:mt-0">
-            <!-- Input más pequeño con borde gris -->
+            <!-- Input -->
             <label for="buscarInput" class="sr-only">Buscar producto</label>
             <input 
                 type="text" 
@@ -90,38 +92,60 @@
     </div>
     
     
-    <!-- Pie de página -->
+<!-- Pie de página -->
 <footer class="bg-gray-800 text-gray-300 py-8">
-    <div class="container mx-auto px-4 text-center md:text-left">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="container mx-auto px-4 ml-20 flex justify-between">
+        <!-- Contenedor principal -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center lg:text-left">
             <!-- Columna de información -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Sobre Nosotros</h3>
-                <p>Somos una tienda de ropa con la mejor calidad y precios del mercado. Ofrecemos una amplia variedad de estilos y productos para todos los gustos.</p>
+                <p class="text-sm text-justify">
+                    Somos una página de videojuegos comprometida con brindar la mejor calidad y mantenerte al día con las últimas novedades del mercado. 
+                    Ofrecemos una amplia variedad de estilos y géneros para todos los gustos, desde los títulos más clásicos y nostálgicos 
+                    hasta las experiencias más innovadoras y actuales. Nuestro objetivo es ser el punto de encuentro ideal para los amantes de los videojuegos, 
+                    proporcionando información detallada, actualizaciones constantes y una experiencia única para nuestra comunidad de jugadores. 
+                    ¡Explora, descubre y disfruta con nosotros!
+                </p>
             </div>
+
             <!-- Columna de enlaces -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Catálogo</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Contacto</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Términos y Condiciones</a></li>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Catálogo</a>
+                    </li>
+                    <li>
+                        <a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Contacto</a>
+                    </li>
+                    <li>
+                        <a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Términos y Condiciones</a>
+                    </li>
                 </ul>
             </div>
+
             <!-- Columna de contacto -->
             <div>
                 <h3 class="text-xl font-semibold mb-4">Contacto</h3>
-                <p>Dirección: Calle Ramirez 123, Talavera de la Reina</p>
-                <p>Teléfono: +123 456 789</p>
-                <p>Email: contacto@exclusiva.com</p>
+                <ul class="space-y-2 text-sm">
+                    <li>Dirección: Calle Ramirez 123, Talavera de la Reina</li>
+                    <li>Teléfono: +123 456 789</li>
+                    <li>Email: contacto@exclusiva.com</li>
+                </ul>
             </div>
         </div>
-        <div class="mt-8 border-t border-gray-700 pt-4">
-            <p>&copy; 2024 Exclusiva. Todos los derechos reservados.</p>
+
+        <!-- Barra inferior -->
+        <div class="mt-8 border-t border-gray-700 pt-4 text-center">
+            <p class="text-sm">&copy; 2024 Exclusiva. Todos los derechos reservados.</p>
         </div>
     </div>
 </footer>
+
         
 
 <script src="../js/details.js"></script>

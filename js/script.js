@@ -7,14 +7,21 @@ const contenedorVideoGames = document.getElementById("contenedorProductos");
 //SEGUNDA API
 ////https://rawg.io/apidocs
 
-//API KEY
+// Paginas
+let page = 1; 
+let limite_elementos = 20;
+
+//API KEY DE LA API DE RAWG
 const rawg_api_key = "9bcf3c9f63b14190af4d0b114a9d3096"
 
 
-//URL de los productos
+//URL de los videojuegos
 const url_ftg = "https://www.freetogame.com/api";
-const url_games = url_ftg + "/games"
+// console.log(url_ftg)
+const url_games = url_ftg + `/games?page=${page}&limit=${limite_elementos}`
+//console.log(url_games)
 const url_game = url_ftg + "/game?id="
+// console.log(url_game)
 const page_size = 1
 
 const url_rawg = `https://api.rawg.io/api/games?key=${rawg_api_key}&page_size=${page_size}&search=`
@@ -23,6 +30,7 @@ const url_rawg = `https://api.rawg.io/api/games?key=${rawg_api_key}&page_size=${
 const peticion = async (url) => {
   const response = await fetch(url);
   const data = await response.json();
+  //console.log(data)
   return data;
 }
 
@@ -56,6 +64,8 @@ const crearElementos = (videoGames) => {
 
 //Funcion para mostrar los productos
 const mostrarProductos = async (url) => {
+  console.log('muestro productos')
+  console.log(url)
   const data = await peticion(url);
   crearElementos(data);
 }
@@ -94,6 +104,38 @@ const showDetails = async (event) => {
 
   }
 }
+
+
+
+//Elementos
+next_button = document.getElementById("next_button");
+main = document.getElementById("main");
+
+// Pagina siguiente
+next_button.addEventListener("click", () => {
+  console.log("Estoy haciendo clicj")
+  page++;
+
+  contenedorVideoGames.innerHTML = "";  // Limpiamos la página actual
+  const url_games = `${url_ftg}/games?page=${page}&limit=${limite_elementos}`;
+  mostrarProductos(url_games);
+  console.log(url_games)
+
+
+});
+
+
+// Pagina anterior
+next_button.addEventListener("click", () => {
+  console.log("Estoy haciendo clicj")
+  page--;
+
+  main.innerHTML = "";  // Limpiamos la página actual
+  const url_games = `${url_ftg}/games?page=${page}&limit=${limite_elementos}`;
+  console.log(url_games)
+  mostrarProductos(url_games);
+});
+
 
 contenedorVideoGames.addEventListener('click', showDetails)
 

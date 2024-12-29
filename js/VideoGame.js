@@ -15,11 +15,10 @@ class VideoGame {
     createContainerVideoGame(){
        // Contenedor individual para cada videojuego
        const contenedorVideoJuego = document.createElement("div");
-       contenedorVideoJuego.classList.add("border", "border-gray-400", "bg-gray-300", "p-4", "rounded", 
-        "shadow", "flex", "flex-col", "justify-between", "h-full", "w-50", 'transform', 
-      'transition', 
-      'duration-300', 
-      'hover:scale-105');
+       
+       //Estilos para el contenedor de cada tarjeta de juego
+       contenedorVideoJuego.classList.add("border", "border-gray-400", "bg-gray-300", "p-4", "rounded", "shadow", 
+        "flex", "flex-col", "justify-between", "h-full", "w-50", 'transform', 'transition', 'duration-300', 'hover:scale-105');
    
        // Titulo del videojuego
        const tituloJuego = document.createElement("h3");
