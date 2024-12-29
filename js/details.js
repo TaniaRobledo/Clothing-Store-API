@@ -5,6 +5,8 @@ const getLsItem = () => {
   //Lo convertimos a jsnon
   return JSON.parse(localStorage.getItem(item_name));
 };
+
+//Iconos sobre las plataformas
 const getImagePlatform = (platform_name) => {
   const platformNameLower = platform_name.toLowerCase();
 

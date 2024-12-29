@@ -1,9 +1,10 @@
 .icon{
     width: 25px;
+
 }
 .pc-icon {
-    color: #0078d4; 
-  }
+color: #0078d4;
+}
   
   .xbox-icon {
     color: #107c10;
@@ -11,6 +12,7 @@
   
   .playstation-icon {
     color: #0068b7; 
+
   }
   
   .nintendo-icon {

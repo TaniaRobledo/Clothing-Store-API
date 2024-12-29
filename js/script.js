@@ -9,7 +9,8 @@ const contenedorVideoGames = document.getElementById("contenedorProductos");
 
 // Paginas
 let page = 1; 
-let limite_elementos = 20;
+let limite_elementos = 5;
+let videoGames = {}
 
 //API KEY DE LA API DE RAWG
 const rawg_api_key = "9bcf3c9f63b14190af4d0b114a9d3096"
@@ -34,13 +35,23 @@ const peticion = async (url) => {
   return data;
 }
 
+const getMinMaxValues = (limite, page) => {
+  if(page == 1)
+    return [0, limite - 1]
+  return [(page - 1) * limite, (page * limite )- 1]
+}
+
 // Función para crear elementos
-const crearElementos = (videoGames) => {
+const crearElementos = (videoGames, page) => {
   //Declaramos el fragment
   const fragment = document.createDocumentFragment();
 
+  [min, max] = getMinMaxValues(limite_elementos, page)
+
+  console.table(videoGames.slice(min, max))
+
   //Por cada videojuego me creo un objeto videojuego
-  videoGames.forEach(videoGame => {
+  videoGames.slice(min, max).forEach(videoGame => {
 
     game = new VideoGame(
       videoGame.game_url,
@@ -51,27 +62,34 @@ const crearElementos = (videoGames) => {
       videoGame.thumbnail,
       videoGame.title,)
 
-    contenedorVideoJuego = game.createContainerVideoGame()
+    const contenedorVideoJuego = game.createContainerVideoGame()
 
     // Agregar la tarjeta al fragmento
     fragment.appendChild(contenedorVideoJuego);
   });
 
-  // Agregar el fragmento al contenedor
-  contenedorVideoGames.appendChild(fragment);
+  return fragment
+
+ 
 };
+
+//Funcion para mostrar elementos
+const mostrarElementos = (elementos) => {
+   // Agregar el fragmento al contenedor
+   contenedorVideoGames.appendChild(elementos);
+}
 
 
 //Funcion para mostrar los productos
-const mostrarProductos = async (url) => {
-  //console.log('muestro productos')
-  //console.log(url)
-  const data = await peticion(url);
-  crearElementos(data);
+const cargarProductos = async (url, primera_carga) => {
+  if(primera_carga)
+    videoGames = await peticion(url);
+  const elementos = crearElementos(videoGames, page);
+  mostrarElementos(elementos)
 }
 
-//Llamo a mostrar productos
-mostrarProductos(url_games)
+//Llamo a mostrar productos pasandole la URL de games
+cargarProductos(url_games, true)
 
 //Funcion mostrar detalles de la API de rawg
 const showDetails = async (event) => {
@@ -86,8 +104,6 @@ const showDetails = async (event) => {
 
     // Descripcion
     const description = videoGameDetailsFreeToGame.description;
-    console.log(videoGameDetailsFreeToGame)
-    console.log(description)
 
     // Realizar la petición a Rawg mediante elnombre de la API de freetogame
     const url_by_name = url_rawg + videoGameName;
@@ -108,31 +124,29 @@ const showDetails = async (event) => {
 
 //Elementos para paginación
 next_button = document.getElementById("next_button");
-main = document.getElementById("main");
+previous_button = document.getElementById("previous_button");
+
+const setButtonValues = () => {
+  previous_button.disabled = (page == 1);
+    
+}
 
 // Pagina siguiente
 next_button.addEventListener("click", () => {
-  //console.log("Estoy haciendo clicj")
+  console.log('rntro')
   page++;
-
   contenedorVideoGames.innerHTML = "";  // Limpiamos la página actual
-  const url_games = `${url_ftg}/games?page=${page}&limit=${limite_elementos}`;
-  mostrarProductos(url_games);
-  //console.log(url_games)
-
-
+  cargarProductos(url_games, false);
+  setButtonValues()
 });
 
 
 // Pagina anterior
-next_button.addEventListener("click", () => {
-  console.log("Estoy haciendo clicj")
+previous_button.addEventListener("click", () => {
   page--;
-
-  main.innerHTML = "";  // Limpiamos la página actual
-  const url_games = `${url_ftg}/games?page=${page}&limit=${limite_elementos}`;
-  console.log(url_games)
-  mostrarProductos(url_games);
+  contenedorVideoGames.innerHTML = "";  // Limpiamos la página actual
+  cargarProductos(url_games, false);
+  setButtonValues()
 });
 
 
