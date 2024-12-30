@@ -1,7 +1,14 @@
-*{
-    font-family: roboto;
-    src: url(../assets/fonts/Roboto/Roboto-Light.ttf);
-}
+
+@font-face {
+    font-family: afacad;
+    src: url(../assets/fonts/Afacad_Flux/static/AfacadFlux-Regular.ttf);
+  }
+  
+  *{
+    font-family: afacad;
+    src: url(../assets/fonts/Afacad_Flux/static/AfacadFlux-Regular.ttf);
+  }
+  
 
 body {
     display: grid;

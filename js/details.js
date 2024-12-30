@@ -12,21 +12,21 @@ const getImagePlatform = (platform_name) => {
 
   // Verificar si platform_name contiene alguna de las opciones y asignar la clase correspondiente
   if (platformNameLower.includes("pc")) {
-    return `<img title="${platform_name}" class="icon pc-icon" src="../assets/images/icons/windows-brands-solid.svg" alt="Icono SVG">`;
+    return `<img title="${platform_name}" class="icon pc-icon filter-yellow" src="../assets/images/icons/windows-brands-solid.svg" alt="Icono SVG">`;
   }
   if (platformNameLower.includes("xbox")) {
-    return `<img title="${platform_name}" class="icon xbox-icon" src="../assets/images/icons/xbox-brands-solid.svg" alt="Icono SVG">`;
+    return `<img title="${platform_name}" class="icon filter-green" src="../assets/images/icons/xbox-brands-solid.svg" alt="Icono SVG">`;
   }
 
   if (platformNameLower.includes("playstation")) {
-    return `<img title="${platform_name}" class="icon playstation-icon" src="../assets/images/icons/playstation-brands-solid.svg" alt="Icono SVG">`;
+    return `<img title="${platform_name}" class="icon filter-blue" src="../assets/images/icons/playstation-brands-solid.svg" alt="Icono SVG">`;
   }
 
   if (platformNameLower.includes("nintendo")) {
-    return `<img title="${platform_name}" class="icon nintendo-icon" src="../assets/images/icons/gamepad-solid.svg" alt="Icono SVG">`;
+    return `<img title="${platform_name}" class="icon filter-red" src="../assets/images/icons/gamepad-solid.svg" alt="Icono SVG">`;
   }
 
-  return `<img title="${platform_name}" class="icon other-icon" src="../assets/images/icons/desktop-solid.svg" alt="Icono SVG">`;
+  return `<img title="${platform_name}" class="icon filter-pink" src="../assets/images/icons/desktop-solid.svg" alt="Icono SVG">`;
 };
 
 

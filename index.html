@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,163 +9,191 @@
     <link rel="shortcut icon" href="./assets/images/Index/favicon3.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body class="bg-gray-200">
 
-<!-- Encabezado -->
-<header class="bg-light-blue shadow-lg">
-    <div class="container mx-auto py-6 px-8 flex items-center justify-between flex-col md:flex-row">
-        <!-- Logo -->
-        <img src="./assets/images/Index/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
-      
-        <!-- Menú -->
-        <nav class="bg-gray-300 p-4 rounded-lg md:flex-1 bg-purple-300">
-            <ul class="flex space-x-8 justify-center">
-                <li><a href="./pages/registro.html" class="text-white text-lg hover:text-gray-600">Inicio de sesión</a></li>
-                <li><a href="./pages/nuevo_registro.html" class="text-white text-lg hover:text-gray-600">Registrarse</a></li>
-                <li><a href="#main" class="text-white text-lg hover:text-gray-600">Carta de Videojuegos</a></li>
-                <li><a href="#opiniones" class="text-white text-lg hover:text-gray-600">Opiniones</a></li>
-                <li><a href="#contacto" class="text-white text-lg hover:text-gray-600">Contáctanos</a></li>
-            </ul>
-        </nav>
-      
-        <!-- Búsqueda -->
-        <div class="flex items-center space-x-4 mt-4 md:mt-0">
-            <!-- Input-->
-            <label for="buscarInput" class="sr-only">Buscar producto</label>
-            <input 
-                type="text" 
-                id="buscarInput" 
-                placeholder="Buscar producto..." 
-                class="w-48 px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-            
-            <!-- Botón Buscar -->
-            <button 
-                id="buscarBtn" 
-                class="px-6 py-3 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition-colors">
-                Buscar
+    <!-- Container -->
+    <div class="container mx-auto min-h-screen flex flex-col justify-start items-center">
+        <!-- Encabezado -->
+        <header class="bg-light-blue shadow-lg">
+            <div class="container mx-auto py-6 px-8 flex items-center justify-between flex-col md:flex-row">
+                <!-- Logo -->
+                <img src="./assets/images/Index/logo.png" alt="Imagen logo" class="w-60 h-60 mb-4 md:mb-0">
+
+                <!-- Menú -->
+                <nav class="bg-gray-300 p-4 rounded-lg md:flex-1 bg-purple-300">
+                    <ul class="flex space-x-8 justify-center">
+                        <li><a href="./pages/registro.html" class="text-white text-lg hover:text-gray-600">Inicio de
+                                sesión</a></li>
+                        <li><a href="./pages/nuevo_registro.html"
+                                class="text-white text-lg hover:text-gray-600">Registrarse</a></li>
+                        <li><a href="#main" class="text-white text-lg hover:text-gray-600">Carta de Videojuegos</a></li>
+                        <li><a href="#opiniones" class="text-white text-lg hover:text-gray-600">Opiniones</a></li>
+                        <li><a href="#contacto" class="text-white text-lg hover:text-gray-600">Contáctanos</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Búsqueda -->
+                <div class="flex items-center space-x-4 mt-4 md:mt-0">
+                    <!-- Input-->
+                    <label for="buscarInput" class="sr-only">Buscar producto</label>
+                    <input type="text" id="buscarInput" placeholder="Buscar producto..."
+                        class="w-48 px-3 py-2 border border-gray-400 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+
+                    <!-- Botón Buscar -->
+                    <button id="buscarBtn"
+                        class="px-6 py-3 bg-gray-400 text-white rounded-lg hover:bg-gray-600 transition-colors">
+                        Buscar
+                    </button>
+                </div>
+
+        </header>
+
+        <!-- Contenedor para las tarjetas de los videojuegos -->
+        <main class="main mx-auto py-12 px-8" id="main">
+            <h2 class="text-3xl font-bold text-purple-800 mb-10 text-center">Videojuegos Trending</h2>
+            <div id="contenedorProductos"
+                class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+                <!-- Aquí van las tarjetas de los videojuegos -->
+
+            </div>
+        </main>
+
+        <!-- Botones para pasar de página -->
+        <div class="flex justify-center mt-4 m-10">
+            <button id="previous_button"
+                class="bg-purple-400 text-white text-xl px-4 py-2 rounded m-5 hover:bg-purple-500 flex items-center justify-center"
+                style="width: 300px;">
+                <img src="./assets/images/Index/flecha1.png" alt="flecha" class="mr-4"
+                    style="width: 40px; height: 40px;">
+                Página anterior
+            </button>
+            <button id="next_button"
+                class="bg-purple-400 text-white text-xl px-4 py-2 rounded m-5 hover:bg-purple-500 flex items-center justify-center"
+                style="width: 300px;">
+                Página siguiente
+                <img src="./assets/images/Index/flecha.png" alt="flecha" class="ml-2 ml-4"
+                    style="width: 40px; height: 40px;">
             </button>
         </div>
-   
-</header>
 
-<!-- Contenedor para las tarjetas de los videojuegos -->
-<main class="main mx-auto py-12 px-8" id="main">
-    <h2 class="text-3xl font-bold text-purple-800 mb-10 text-center">Videojuegos Trending</h2>
-    <div id="contenedorProductos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
-        <!-- Aquí van las tarjetas de los videojuegos -->
-      
+
+        <!-- Opiniones -->
+        <section class="container mx-auto py-16 px-8" id="opiniones">
+            <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">Lo que dicen nuestros clientes</h3>
+            <!-- contenedor de opiniones -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- primera opinion -->
+                <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <p class="text-gray-800 mb-4">"¡Me encanta la variedad de videojuegos que tienen! Encontré toda la
+                        información que necesitaba sobre los juegos y las plataformas." - Jorge</p>
+                    <div class="flex items-center">
+                        <img src="./assets/images/Index/cliente1.png" alt="Cliente1"
+                            class="rounded-full mr-4 w-[200px]">
+                        <span class="font-semibold text-gray-800">Jorge Pérez</span>
+                    </div>
+                </div>
+                <!-- segunda opinion -->
+                <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <p class="text-gray-800 mb-4">"Excelente página, siempre encuentro los videojuegos que busco, con
+                        toda la información actualizada. ¡Perfecto para los gamers" - Ana</p>
+                    <div class="flex items-center">
+                        <img src="./assets/images/Index/cliente2.png" alt="Cliente2"
+                            class="rounded-full mr-4 w-[190px]">
+                        <span class="font-semibold text-gray-800">Ana García</span>
+                    </div>
+                </div>
+                <!-- tercera opinion -->
+                <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <p class="text-gray-800 mb-4">"Me sorprendió la cantidad de detalles sobre cada videojuego, cada
+                        descripción e imagenes. ¡Me ayudó a decidir cuál jugar!" - Marta</p>
+                    <div class="flex items-center">
+                        <img src="./assets/images/Index/cliente3.png" alt="Cliente3"
+                            class="rounded-full mr-4  w-[220px]">
+                        <span class="font-semibold text-gray-800">Marta López</span>
+                    </div>
+                </div>
+                <!-- cuarta opinion -->
+                <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <p class="text-gray-800 mb-4">"La atención al cliente es increíble. Me ayudaron a encontrar juegos
+                        según la plataforma que uso y mus gustos por los videojuegos." - Pedro</p>
+                    <div class="flex items-center">
+                        <img src="./assets/images/Index/cliente4.png" alt="Cliente4"
+                            class="rounded-full mr-4  w-[190px]">
+                        <span class="font-semibold text-gray-800">Pedro Gómez</span>
+                    </div>
+                </div>
+                <!-- quinta opinion -->
+                <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <p class="text-gray-800 mb-4">"Me encanta lo fácil que es navegar por la tienda. Toda la información
+                        sobre los videojuegos y sus plataformas está muy bien organizada." - Luisa</p>
+                    <div class="flex items-center">
+                        <img src="./assets/images/Index/cliente5.png" alt="Cliente5"
+                            class="rounded-full mr-4  w-[170px]">
+                        <span class="font-semibold text-gray-800">Luisa Fernández</span>
+                    </div>
+                </div>
+                <!-- sexta opinion -->
+                <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
+                    <p class="text-gray-800 mb-4">"Definitivamente volveré a visitar la página. ¡Toda la información
+                        sobre videojuegos está al alcance de un clic facilmente!" - Carlos</p>
+                    <div class="flex items-center">
+                        <img src="./assets/images/Index/cliente6.png" alt="Cliente6"
+                            class="rounded-full mr-4  w-[190px]">
+                        <span class="font-semibold text-gray-800">Carlos Ramírez</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- container -->
     </div>
-</main>
 
-  <!-- Botones para pasar de página -->
-  <div class="flex justify-center mt-4 m-10">
-   <button id="previous_button" class="bg-purple-400 text-white text-xl px-4 py-2 rounded m-5 hover:bg-purple-500 flex items-center justify-center" style="width: 300px;">
-        <img src="./assets/images/Index/flecha1.png" alt="flecha" class="mr-4" style="width: 40px; height: 40px;">
-        Página anterior
-    </button>
-    <button id="next_button" class="bg-purple-400 text-white text-xl px-4 py-2 rounded m-5 hover:bg-purple-500 flex items-center justify-center" style="width: 300px;">
-        Página siguiente
-        <img src="./assets/images/Index/flecha.png" alt="flecha" class="ml-2 ml-4" style="width: 40px; height: 40px;">
-    </button>
- </div>
+    <!-- Pie de página -->
+    <footer class="bg-gray-800 text-gray-300 py-8" id="contacto">
+        <div class="container mx-auto px-4 text-center md:text-left ml-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Columna de información -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Sobre Nosotros</h3>
+                    <p class="text-justify"> Somos una página de videojuegos comprometida con brindar la mejor calidad y
+                        mantenerte al día con las últimas novedades del mercado.
+                        Ofrecemos una amplia variedad de estilos y géneros para todos los gustos, desde los títulos más
+                        clásicos y nostálgicos
+                        hasta las experiencias más innovadoras y actuales.</p>
+                </div>
+                <!-- Columna de enlaces -->
+                <div class="ml-14">
+                    <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul>
+                        <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white"
+                                target="_blank">Inicio</a></li>
+                        <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white"
+                                target="_blank">Catálogo</a></li>
+                        <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white"
+                                target="_blank">Contacto</a></li>
+                        <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white"
+                                target="_blank">Términos y Condiciones</a></li>
+                    </ul>
+                </div>
+                <!-- Columna de contacto -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contacto</h3>
+                    <p>Dirección: Calle Ramirez 123, Talavera de la Reina</p>
+                    <p>Teléfono: +123 456 789</p>
+                    <p>Email: contacto@videoGame.com</p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-4">
+                <p>&copy; 2024 Exclusiva. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
 
-<!-- Opiniones -->
-<section class="container mx-auto py-16 px-8" id="opiniones">
-    <h3 class="text-4xl font-bold text-gray-800 mb-12 text-center">Lo que dicen nuestros clientes</h3>
-    <!-- contenedor de opiniones -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- primera opinion -->
-        <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-            <p class="text-gray-800 mb-4">"¡Me encanta la variedad de videojuegos que tienen! Encontré toda la información que necesitaba sobre los juegos y las plataformas." - Jorge</p>
-            <div class="flex items-center">
-                <img src="./assets/images/Index/cliente1.png" alt="Cliente1" class="rounded-full mr-4 w-[200px]">
-                <span class="font-semibold text-gray-800">Jorge Pérez</span>
-            </div>
-        </div>
-          <!-- segunda opinion -->
-        <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-            <p class="text-gray-800 mb-4">"Excelente página, siempre encuentro los videojuegos que busco, con toda la información actualizada. ¡Perfecto para los gamers" - Ana</p>
-            <div class="flex items-center">
-                <img src="./assets/images/Index/cliente2.png" alt="Cliente2" class="rounded-full mr-4 w-[190px]">
-                <span class="font-semibold text-gray-800">Ana García</span>
-            </div>
-        </div>
-          <!-- tercera opinion -->
-        <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-            <p class="text-gray-800 mb-4">"Me sorprendió la cantidad de detalles sobre cada videojuego, cada descripción e imagenes. ¡Me ayudó a decidir cuál jugar!" - Marta</p>
-            <div class="flex items-center">
-                <img src="./assets/images/Index/cliente3.png" alt="Cliente3" class="rounded-full mr-4  w-[220px]">
-                <span class="font-semibold text-gray-800">Marta López</span>
-            </div>
-        </div>
-        <!-- cuarta opinion -->
-        <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-            <p class="text-gray-800 mb-4">"La atención al cliente es increíble. Me ayudaron a encontrar juegos según la plataforma que uso y mus gustos por los videojuegos." - Pedro</p>
-            <div class="flex items-center">
-                <img src="./assets/images/Index/cliente4.png" alt="Cliente4" class="rounded-full mr-4  w-[190px]">
-                <span class="font-semibold text-gray-800">Pedro Gómez</span>
-            </div>
-        </div>
-        <!-- quinta opinion -->
-        <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-            <p class="text-gray-800 mb-4">"Me encanta lo fácil que es navegar por la tienda. Toda la información sobre los videojuegos y sus plataformas está muy bien organizada." - Luisa</p>
-            <div class="flex items-center">
-                <img src="./assets/images/Index/cliente5.png" alt="Cliente5" class="rounded-full mr-4  w-[170px]">
-                <span class="font-semibold text-gray-800">Luisa Fernández</span>
-            </div>
-        </div>
-    <!-- sexta opinion -->
-        <div class="p-6 bg-gray-300 shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-            <p class="text-gray-800 mb-4">"Definitivamente volveré a visitar la página. ¡Toda la información sobre videojuegos está al alcance de un clic facilmente!" - Carlos</p>
-            <div class="flex items-center">
-                <img src="./assets/images/Index/cliente6.png" alt="Cliente6" class="rounded-full mr-4  w-[190px]">
-                <span class="font-semibold text-gray-800">Carlos Ramírez</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-</div>
-
-<!-- Pie de página -->
-<footer class="bg-gray-800 text-gray-300 py-8" id="contacto">
-    <div class="container mx-auto px-4 text-center md:text-left ml-10">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Columna de información -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Sobre Nosotros</h3>
-                <p class="text-justify"> Somos una página de videojuegos comprometida con brindar la mejor calidad y mantenerte al día con las últimas novedades del mercado. 
-                    Ofrecemos una amplia variedad de estilos y géneros para todos los gustos, desde los títulos más clásicos y nostálgicos 
-                    hasta las experiencias más innovadoras y actuales.</p>
-            </div>
-            <!-- Columna de enlaces -->
-            <div class="ml-14">
-                <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
-                <ul>
-                    <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Inicio</a></li>
-                    <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Catálogo</a></li>
-                    <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white"  target="_blank">Contacto</a></li>
-                    <li><a href="https://www.game.es/" class="text-gray-400 hover:text-white" target="_blank">Términos y Condiciones</a></li>
-                </ul>
-            </div>
-            <!-- Columna de contacto -->
-            <div>
-                <h3 class="text-xl font-semibold mb-4">Contacto</h3>
-                <p>Dirección: Calle Ramirez 123, Talavera de la Reina</p>
-                <p>Teléfono: +123 456 789</p>
-                <p>Email: contacto@videoGame.com</p>
-            </div>
-        </div>
-        <div class="mt-8 border-t border-gray-700 pt-4">
-            <p>&copy; 2024 Exclusiva. Todos los derechos reservados.</p>
-        </div>
-    </div>
-</footer>
-</div>
-<!-- scripts -->
-<script src="./js/VideoGame.js"></script>
-<script src="./js/script.js"></script>
+    <!-- scripts -->
+    <script src="./js/VideoGame.js"></script>
+    <script src="./js/script.js"></script>
 </body>
-</html>
 
+</html>
