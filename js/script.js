@@ -84,7 +84,6 @@ const crearElementos = (videoGames, page) => {
 
   return fragment
 
- 
 };
 
 //Funcion para mostrar elementos
@@ -146,12 +145,13 @@ const guardarPageEnLS = (page) => {
 next_button = document.getElementById("next_button");
 previous_button = document.getElementById("previous_button");
 
+//Si la pagina es la numero 1 no dejar dar al boton anterior
 const setButtonValues = () => {
   previous_button.disabled = (page == 1);
     
 }
 
-// Pagina siguiente
+// Botón pagina siguiente
 next_button.addEventListener("click", () => {
   console.log('rntro')
   page++;
@@ -161,7 +161,7 @@ next_button.addEventListener("click", () => {
 });
 
 
-// Pagina anterior
+// Botón pagina anterior
 previous_button.addEventListener("click", () => {
   page--;
   contenedorVideoGames.innerHTML = "";  // Limpiamos la página actual

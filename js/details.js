@@ -107,16 +107,7 @@ if (videoGameDetails && videoGameDetails.short_screenshots) {
     // Crear un nueva etiqueta img
     const img = document.createElement('img');
     img.src = screenshot.image; //Añado la que me viene de la API
-    img.classList.add(
-      'rounded-xl', 
-      'transform', 
-      'transition', 
-      'duration-300', 
-      'hover:scale-95', 
-      'w-60', 
-      'h-auto',
-       'mb-5'
-    ); 
+    img.classList.add('rounded-xl', 'transform', 'transition', 'duration-300', 'hover:scale-95', 'w-60', 'h-auto','mb-5'); 
 
     // Agregar la imagen al contenedor
     scrollContainer.appendChild(img);
