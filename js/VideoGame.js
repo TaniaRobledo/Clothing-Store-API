@@ -2,6 +2,7 @@
 
 class VideoGame {
     
+    //Constrcutor con los paramtros
     constructor(gameUrl, genre, id, platform, shortDescription, thumbnail, title) {
         this.gameUrl = gameUrl;
         this.genre = genre;

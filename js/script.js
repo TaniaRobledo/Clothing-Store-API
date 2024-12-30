@@ -1,35 +1,44 @@
-//Elementos
-const contenedorVideoGames = document.getElementById("contenedorProductos");
 
-//PRIMERA API
+//URK PRIMERA API
 //https://www.freetogame.com/
 
-//SEGUNDA API
+//URL SEGUNDA API
 ////https://rawg.io/apidocs
-
-// Paginas
-let page = 1
-
-if(localStorage.getItem('page'))
-  page = localStorage.getItem('page')
-localStorage.removeItem('page')
-
-let limite_elementos = 5;
-let videoGames = {}
 
 //API KEY DE LA API DE RAWG
 const rawg_api_key = "9bcf3c9f63b14190af4d0b114a9d3096"
 
+//Elementos
+const contenedorVideoGames = document.getElementById("contenedorProductos");
 
-//URL de los videojuegos
+// Paginas
+let page = 1
+
+//Para cuando clickamos un videojuego al vovler paraa tras que nos rediriga a la página que estaba, guardandola en el localStorage
+if(localStorage.getItem('page'))
+  page = localStorage.getItem('page')
+localStorage.removeItem('page')
+
+//Numero de videojuegis por pñagina
+let limite_elementos = 6;
+//JSON para guardar los videojuegos por pagina
+let videoGames = {}
+
+
+//URL de la API freetogame
 const url_ftg = "https://www.freetogame.com/api";
-// console.log(url_ftg)
+//console.log(url_ftg)
+
+//URL que me da los videojuegos
 const url_games = url_ftg + `/games?page=${page}&limit=${limite_elementos}`
 //console.log(url_games)
+
+//URL que me da los videojuegos por ID
 const url_game = url_ftg + "/game?id="
 // console.log(url_game)
 const page_size = 1
 
+//URL de la API de rwag con mi APIKEY 
 const url_rawg = `https://api.rawg.io/api/games?key=${rawg_api_key}&page_size=${page_size}&search=`
 
 //Funcion para hacer la petición asíncrona
@@ -40,6 +49,7 @@ const peticion = async (url) => {
   return data;
 }
 
+//Funcion para hacer la paginacion
 const getMinMaxValues = (limite, page) => {
   if(page == 1)
     return [0, limite - 1]
@@ -50,10 +60,9 @@ const getMinMaxValues = (limite, page) => {
 const crearElementos = (videoGames, page) => {
   //Declaramos el fragment
   const fragment = document.createDocumentFragment();
-
   [min, max] = getMinMaxValues(limite_elementos, page)
 
-  console.table(videoGames.slice(min, max))
+
 
   //Por cada videojuego me creo un objeto videojuego
   videoGames.slice(min, max).forEach(videoGame => {
@@ -104,6 +113,7 @@ const showDetails = async (event) => {
     // 1- Hacer una peticion a la pai de rawg con el nombre del jeugo al cual perteneezca el boton clicja
     const videoGameName = elementOnClick.parentElement.children[0].textContent
     const elementId = elementOnClick.parentElement.children[1].textContent
+
     // 2- Hacer una peticion a la API de FreeToGame con el ID del juego
     const videoGameDetailsFreeToGame = await peticion(url_game + elementId);
 
@@ -126,6 +136,7 @@ const showDetails = async (event) => {
   }
 }
 
+//Funcion oara guardar la pagina en el localStorage
 const guardarPageEnLS = (page) => {
   localStorage.setItem('page', page)
 }

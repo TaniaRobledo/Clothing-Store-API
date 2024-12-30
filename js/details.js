@@ -97,7 +97,7 @@ if (videoGameDetails && videoGameDetails.platforms) {
 }
 
 
-//Elemento
+//Elemento para deslizar las imagenes con scroll
 const scrollContainer = document.getElementById('scroll_container');
 
 // Verificar si el objeto tiene imágenes
@@ -122,6 +122,6 @@ if (videoGameDetails && videoGameDetails.short_screenshots) {
     scrollContainer.appendChild(img);
   });
 } else {
-  // Si no hay imágenes disponibles
+  // Si no hay imágenes disponibles ponems el texto
   scrollContainer.innerHTML = '<p class="text-gray-500">No hay imágenes disponibles.</p>';
 }
